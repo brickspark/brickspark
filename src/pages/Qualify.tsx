@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, User, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Helmet } from "react-helmet-async";
 
@@ -35,15 +35,16 @@ interface FormData {
   phone: string;
 }
 
-const steps = [
+const questionnaireSteps = [
   { id: 1, title: "Your Goals", icon: Target },
   { id: 2, title: "What You've Tried", icon: Users },
   { id: 3, title: "Your Team", icon: User },
   { id: 4, title: "Timeline & Budget", icon: Clock },
-  { id: 5, title: "Contact Info", icon: Sparkles },
+  { id: 5, title: "Final Details", icon: Sparkles },
 ];
 
 const Qualify = () => {
+  const [hasCompletedLeadCapture, setHasCompletedLeadCapture] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -65,6 +66,14 @@ const Qualify = () => {
     phone: "",
   });
 
+  const canProceedLeadCapture = () => {
+    return formData.name.trim().length > 0 && formData.email.trim().length > 0;
+  };
+
+  const handleLeadCaptureSubmit = () => {
+    setHasCompletedLeadCapture(true);
+  };
+
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -80,7 +89,7 @@ const Qualify = () => {
       case 4:
         return formData.timeline.length > 0;
       case 5:
-        return formData.name.length > 0 && formData.email.length > 0;
+        return true; // Company is optional
       default:
         return false;
     }
@@ -169,6 +178,94 @@ const Qualify = () => {
     );
   }
 
+  // Lead Capture Form (before questionnaire)
+  if (!hasCompletedLeadCapture) {
+    return (
+      <>
+        <Helmet>
+          <title>Get Your Custom Workshop Proposal | Brick Spark</title>
+          <meta name="description" content="Start your journey to a transformative LEGO® Serious Play® workshop. Enter your details to begin." />
+        </Helmet>
+        <Header />
+        <main className="min-h-screen pt-24 pb-16 bg-gradient-hero flex items-center">
+          <div className="container px-4">
+            <div className="max-w-lg mx-auto">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Mail className="w-8 h-8 text-primary" />
+                </div>
+                <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Let's Get Started
+                </h1>
+                <p className="text-muted-foreground">
+                  Enter your details below and we'll guide you through a few quick questions to create your personalized workshop proposal.
+                </p>
+              </div>
+
+              {/* Lead Capture Form */}
+              <div className="bg-card rounded-2xl border border-border p-8 shadow-medium">
+                <div className="space-y-5">
+                  <div>
+                    <Label htmlFor="lead-name">Your Name *</Label>
+                    <Input
+                      id="lead-name"
+                      placeholder="Jane Doe"
+                      value={formData.name}
+                      onChange={(e) => updateFormData("name", e.target.value)}
+                      className="mt-2"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="lead-email">Work Email *</Label>
+                    <Input
+                      id="lead-email"
+                      type="email"
+                      placeholder="jane@company.com"
+                      value={formData.email}
+                      onChange={(e) => updateFormData("email", e.target.value)}
+                      className="mt-2"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="lead-phone">Phone Number</Label>
+                    <Input
+                      id="lead-phone"
+                      type="tel"
+                      placeholder="+44 7XXX XXXXXX"
+                      value={formData.phone}
+                      onChange={(e) => updateFormData("phone", e.target.value)}
+                      className="mt-2"
+                    />
+                  </div>
+                </div>
+
+                <Button
+                  variant="hero"
+                  className="w-full mt-6"
+                  onClick={handleLeadCaptureSubmit}
+                  disabled={!canProceedLeadCapture()}
+                >
+                  Continue to Questionnaire
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+
+                <p className="text-xs text-muted-foreground text-center mt-4">
+                  Your information is collected for contact purposes only. We respect your privacy and will never share your details with third parties.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Helmet>
@@ -191,10 +288,10 @@ const Qualify = () => {
 
             {/* Progress Steps */}
             <div className="flex justify-between mb-10">
-              {steps.map((step, index) => (
+              {questionnaireSteps.map((step, index) => (
                 <div 
                   key={step.id}
-                  className={`flex flex-col items-center ${index < steps.length - 1 ? 'flex-1' : ''}`}
+                  className={`flex flex-col items-center ${index < questionnaireSteps.length - 1 ? 'flex-1' : ''}`}
                 >
                   <div className="relative flex items-center w-full">
                     <div 
@@ -212,7 +309,7 @@ const Qualify = () => {
                         <step.icon className="w-5 h-5" />
                       )}
                     </div>
-                    {index < steps.length - 1 && (
+                    {index < questionnaireSteps.length - 1 && (
                       <div 
                         className={`h-1 flex-1 mx-2 rounded transition-colors ${
                           currentStep > step.id ? 'bg-primary' : 'bg-muted'
@@ -452,44 +549,19 @@ const Qualify = () => {
                 </div>
               )}
 
-              {/* Step 5: Contact Info */}
+              {/* Step 5: Final Details */}
               {currentStep === 5 && (
                 <div className="space-y-6">
                   <div>
                     <h2 className="font-display text-xl font-semibold text-foreground mb-2">
-                      Almost there! How can we reach you?
+                      Almost there! Just a couple more details
                     </h2>
                     <p className="text-sm text-muted-foreground mb-4">
-                      We'll send your personalized proposal within 24 hours.
+                      We'll send your personalized proposal to {formData.email} within 24 hours.
                     </p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="name">Your Name *</Label>
-                      <Input
-                        id="name"
-                        placeholder="Jane Doe"
-                        value={formData.name}
-                        onChange={(e) => updateFormData("name", e.target.value)}
-                        className="mt-2"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email">Work Email *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="jane@company.com"
-                        value={formData.email}
-                        onChange={(e) => updateFormData("email", e.target.value)}
-                        className="mt-2"
-                        required
-                      />
-                    </div>
-
+                  <div className="space-y-4">
                     <div>
                       <Label htmlFor="company">Company Name</Label>
                       <Input
@@ -501,16 +573,12 @@ const Qualify = () => {
                       />
                     </div>
 
-                    <div>
-                      <Label htmlFor="phone">Phone (Optional)</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+44 7XXX XXXXXX"
-                        value={formData.phone}
-                        onChange={(e) => updateFormData("phone", e.target.value)}
-                        className="mt-2"
-                      />
+                    <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-medium text-foreground">Sending proposal to:</span><br />
+                        {formData.name} • {formData.email}
+                        {formData.phone && ` • ${formData.phone}`}
+                      </p>
                     </div>
                   </div>
 
