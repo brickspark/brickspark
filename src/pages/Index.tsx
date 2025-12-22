@@ -7,6 +7,7 @@ import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { LogoCarousel } from "@/components/sections/LogoCarousel";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { ValueStackSection } from "@/components/sections/ValueStackSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -38,6 +39,9 @@ const Index = () => {
         <LogoCarousel />
         <section id="testimonials">
           <TestimonialsSection />
+        </section>
+        <section id="about">
+          <AboutSection />
         </section>
         <ValueStackSection />
         <section id="faq">
