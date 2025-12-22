@@ -8,25 +8,25 @@
   :root {
     /* Brick Spark Brand Colors - Matching Logo */
     --background: 45 30% 98%;
-    --foreground: 215 65% 18%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 65% 18%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 65% 18%;
+    --popover-foreground: 0 0% 8%;
 
     /* Bright Orange - From Logo Outline */
     --primary: 35 95% 50%;
-    --primary-foreground: 215 65% 18%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep Navy - Main Logo Text Color */
-    --secondary: 215 65% 18%;
+    /* Black - Replacing Navy */
+    --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 100%;
 
     /* Soft Cream */
     --muted: 45 25% 94%;
-    --muted-foreground: 215 40% 40%;
+    --muted-foreground: 0 0% 35%;
 
     /* Spark Red/Orange - From Logo Spark */
     --accent: 15 90% 55%;
@@ -34,39 +34,39 @@
 
     /* Brick Spark Brand Palette */
     --lego-red: 15 90% 55%;
-    --lego-blue: 215 65% 18%;
+    --lego-blue: 0 0% 8%;
     --lego-green: 145 65% 45%;
     --lego-yellow: 35 95% 50%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
     --ring: 35 95% 50%;
 
     --radius: 0.75rem;
 
     /* Custom Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(215 65% 18% / 0.08);
-    --shadow-medium: 0 8px 30px -8px hsl(215 65% 18% / 0.12);
-    --shadow-strong: 0 20px 50px -12px hsl(215 65% 18% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 8% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(0 0% 8% / 0.12);
+    --shadow-strong: 0 20px 50px -12px hsl(0 0% 8% / 0.2);
     --shadow-glow: 0 0 40px hsl(35 95% 50% / 0.3);
-    --shadow-brick: 4px 4px 0 hsl(215 65% 18% / 0.15);
+    --shadow-brick: 4px 4px 0 hsl(0 0% 8% / 0.15);
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(35 95% 50%), hsl(25 90% 52%));
     --gradient-hero: linear-gradient(180deg, hsl(45 30% 98%) 0%, hsl(45 25% 95%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(215 65% 18%), hsl(215 55% 25%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 18%));
     --gradient-accent: linear-gradient(135deg, hsl(15 90% 55%), hsl(25 85% 50%));
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 215 65% 18%;
-    --sidebar-primary: 215 65% 18%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 45 25% 95%;
-    --sidebar-accent-foreground: 215 65% 18%;
-    --sidebar-border: 215 20% 91%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 91%;
     --sidebar-ring: 35 95% 50%;
   }
 
