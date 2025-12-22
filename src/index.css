@@ -2,72 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Brick Spark Brand Colors - Playful yet Professional */
-    --background: 40 33% 98%;
-    --foreground: 220 25% 15%;
+    /* Brick Spark Brand Colors - Matching Logo */
+    --background: 45 30% 98%;
+    --foreground: 215 65% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 15%;
+    --card-foreground: 215 65% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 15%;
+    --popover-foreground: 215 65% 18%;
 
-    /* Warm Coral - Creative & Energetic */
-    --primary: 12 76% 58%;
-    --primary-foreground: 0 0% 100%;
+    /* Bright Orange - From Logo Outline */
+    --primary: 35 95% 50%;
+    --primary-foreground: 215 65% 18%;
 
-    /* Deep Navy - Professional & Trustworthy */
-    --secondary: 220 60% 20%;
+    /* Deep Navy - Main Logo Text Color */
+    --secondary: 215 65% 18%;
     --secondary-foreground: 0 0% 100%;
 
     /* Soft Cream */
-    --muted: 40 30% 94%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 45 25% 94%;
+    --muted-foreground: 215 40% 40%;
 
-    /* Lego Yellow - Attention Grabbing CTAs */
-    --accent: 45 100% 55%;
-    --accent-foreground: 220 25% 15%;
+    /* Spark Red/Orange - From Logo Spark */
+    --accent: 15 90% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Lego Inspired Palette */
-    --lego-red: 0 75% 55%;
-    --lego-blue: 210 85% 50%;
+    /* Brick Spark Brand Palette */
+    --lego-red: 15 90% 55%;
+    --lego-blue: 215 65% 18%;
     --lego-green: 145 65% 45%;
-    --lego-yellow: 45 100% 55%;
+    --lego-yellow: 35 95% 50%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 12 76% 58%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 35 95% 50%;
 
     --radius: 0.75rem;
 
     /* Custom Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(220 25% 15% / 0.08);
-    --shadow-medium: 0 8px 30px -8px hsl(220 25% 15% / 0.12);
-    --shadow-strong: 0 20px 50px -12px hsl(220 25% 15% / 0.2);
-    --shadow-glow: 0 0 40px hsl(12 76% 58% / 0.3);
-    --shadow-brick: 4px 4px 0 hsl(220 25% 15% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(215 65% 18% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(215 65% 18% / 0.12);
+    --shadow-strong: 0 20px 50px -12px hsl(215 65% 18% / 0.2);
+    --shadow-glow: 0 0 40px hsl(35 95% 50% / 0.3);
+    --shadow-brick: 4px 4px 0 hsl(215 65% 18% / 0.15);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(12 76% 58%), hsl(25 85% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(40 30% 95%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(220 60% 20%), hsl(220 50% 30%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 95% 50%));
+    --gradient-primary: linear-gradient(135deg, hsl(35 95% 50%), hsl(25 90% 52%));
+    --gradient-hero: linear-gradient(180deg, hsl(45 30% 98%) 0%, hsl(45 25% 95%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(215 65% 18%), hsl(215 55% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(15 90% 55%), hsl(25 85% 50%));
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 215 65% 18%;
+    --sidebar-primary: 215 65% 18%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 45 25% 95%;
+    --sidebar-accent-foreground: 215 65% 18%;
+    --sidebar-border: 215 20% 91%;
+    --sidebar-ring: 35 95% 50%;
   }
 
   .dark {
@@ -112,7 +112,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
 }
 
