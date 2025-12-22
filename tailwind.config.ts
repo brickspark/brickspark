@@ -65,8 +65,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
-        display: ['Montserrat', 'sans-serif'],
+        sans: ['Arimo', 'sans-serif'],
+        display: ['Archivo Black', 'sans-serif'],
+        subheading: ['Archivo Narrow', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
