@@ -40,7 +40,11 @@ export const LogoCarousel = () => {
         <div className="flex animate-scroll">
           {/* First set */}
           <div className="flex shrink-0 gap-16 items-center px-8">
-            {logos.map((logo, index) => {})}
+            {logos.map((logo, index) => (
+              <div key={`first-${index}`} className="">
+                {logo.name}
+              </div>
+            ))}
           </div>
           {/* Duplicate set for seamless loop */}
           <div className="flex shrink-0 gap-16 items-center px-8">
