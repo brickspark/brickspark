@@ -1,19 +1,21 @@
 import { Lightbulb, Puzzle, MessageSquare, Rocket } from "lucide-react";
-import { LegoBrick } from "@/components/LegoBrick";
+import workshopPhoto1 from "@/assets/workshop-photo-1.jpg";
+import workshopPhoto2 from "@/assets/workshop-photo-2.jpg";
+import workshopPhoto3 from "@/assets/workshop-photo-3.jpg";
+import workshopPhoto4 from "@/assets/workshop-photo-4.jpg";
+
+const workshopPhotos = [
+  { src: workshopPhoto1, alt: "LEGO workshop model with elephant and landscape" },
+  { src: workshopPhoto2, alt: "LEGO minifigures in team meeting scenario" },
+  { src: workshopPhoto3, alt: "Creative LEGO build with dolphin and figures" },
+  { src: workshopPhoto4, alt: "Team hands-on with LEGO bricks" },
+];
 
 export const SolutionSection = () => {
   return (
     <section className="py-20 md:py-28 bg-gradient-dark text-secondary-foreground relative overflow-hidden">
-      {/* Decorative bricks */}
-      <div className="absolute top-10 right-10 opacity-20">
-        <LegoBrick color="yellow" size="lg" studs={4} />
-      </div>
-      <div className="absolute bottom-20 left-10 opacity-20">
-        <LegoBrick color="red" size="md" studs={2} />
-      </div>
-
       <div className="container px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6">
               The Brick Spark Method
@@ -29,7 +31,24 @@ export const SolutionSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-16">
+            {workshopPhotos.map((photo, index) => (
+              <div 
+                key={index} 
+                className="relative overflow-hidden rounded-xl aspect-square group"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
                 <div className="p-3 rounded-lg bg-primary/20 shrink-0">
@@ -56,7 +75,9 @@ export const SolutionSection = () => {
                   </p>
                 </div>
               </div>
+            </div>
 
+            <div className="space-y-6">
               <div className="flex gap-4 items-start">
                 <div className="p-3 rounded-lg bg-primary/20 shrink-0">
                   <MessageSquare className="w-6 h-6 text-accent" />
@@ -81,29 +102,6 @@ export const SolutionSection = () => {
                     Concrete, assigned tasks with deadlines—delivered before the workshop ends.
                   </p>
                 </div>
-              </div>
-            </div>
-
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-sm aspect-square">
-                {/* Animated brick composition */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-4">
-                  <div className="flex gap-2 justify-center animate-float">
-                    <LegoBrick color="red" size="lg" studs={4} />
-                    <LegoBrick color="blue" size="lg" studs={4} />
-                  </div>
-                  <div className="flex gap-2 justify-center animate-float animation-delay-200">
-                    <LegoBrick color="yellow" size="lg" studs={4} />
-                    <LegoBrick color="green" size="lg" studs={4} />
-                  </div>
-                  <div className="flex gap-2 justify-center animate-float animation-delay-400">
-                    <LegoBrick color="primary" size="lg" studs={4} />
-                    <LegoBrick color="red" size="lg" studs={4} />
-                  </div>
-                </div>
-                
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
               </div>
             </div>
           </div>
