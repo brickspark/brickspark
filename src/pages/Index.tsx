@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
+import { WorkshopTypesSection } from "@/components/sections/WorkshopTypesSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { LogoCarousel } from "@/components/sections/LogoCarousel";
@@ -31,6 +32,7 @@ const Index = () => {
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
+        <WorkshopTypesSection />
         <section id="benefits">
           <BenefitsSection />
         </section>
