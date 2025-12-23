@@ -66,7 +66,7 @@ export default {
   		},
 		fontFamily: {
 			sans: [
-				'Source Sans 3',
+				'DM Sans',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',
@@ -77,15 +77,15 @@ export default {
 				'sans-serif'
 			],
 			display: [
-				'Playfair Display',
+				'Instrument Serif',
 				'serif'
 			],
 			subheading: [
-				'Outfit',
+				'DM Sans',
 				'sans-serif'
 			],
 			serif: [
-				'Playfair Display',
+				'Instrument Serif',
 				'ui-serif',
 				'Georgia',
 				'Cambria',
