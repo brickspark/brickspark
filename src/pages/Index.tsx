@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -11,9 +12,12 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ValueStackSection } from "@/components/sections/ValueStackSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
+import { QualifyModal } from "@/components/QualifyModal";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
+  const [qualifyOpen, setQualifyOpen] = useState(false);
+
   return (
     <>
       <Helmet>
@@ -29,7 +33,7 @@ const Index = () => {
       <Header />
       
       <main>
-        <HeroSection />
+        <HeroSection onOpenQualify={() => setQualifyOpen(true)} />
         <ProblemSection />
         <SolutionSection />
         <WorkshopTypesSection />
@@ -45,10 +49,12 @@ const Index = () => {
         <section id="faq">
           <FAQSection />
         </section>
-        <FinalCTASection />
+        <FinalCTASection onOpenQualify={() => setQualifyOpen(true)} />
       </main>
 
       <Footer />
+      
+      <QualifyModal open={qualifyOpen} onOpenChange={setQualifyOpen} />
     </>
   );
 };
