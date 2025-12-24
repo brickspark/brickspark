@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { LegoBrick } from "@/components/LegoBrick";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-workshop.jpg";
 
-export const HeroSection = () => {
+interface HeroSectionProps {
+  onOpenQualify: () => void;
+}
+
+export const HeroSection = ({ onOpenQualify }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
@@ -58,12 +61,10 @@ export const HeroSection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-300">
-            <Link to="/qualify">
-              <Button variant="hero" size="xl" className="group">
-                Build Your Breakthrough
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <Button variant="hero" size="xl" className="group" onClick={onOpenQualify}>
+              Build Your Breakthrough
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
             <a href="#how-it-works">
               <Button variant="outline" size="lg" className="border-background/30 text-background hover:bg-background/10 hover:text-background">
                 See How It Works

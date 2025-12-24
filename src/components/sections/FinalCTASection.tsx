@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
 
-export const FinalCTASection = () => {
+interface FinalCTASectionProps {
+  onOpenQualify: () => void;
+}
+
+export const FinalCTASection = ({ onOpenQualify }: FinalCTASectionProps) => {
   return (
     <section className="py-20 md:py-28 bg-gradient-primary relative overflow-hidden">
       {/* Decorative elements */}
@@ -38,16 +41,15 @@ export const FinalCTASection = () => {
             </div>
           </div>
 
-          <Link to="/qualify">
-            <Button 
-              variant="accent" 
-              size="xl" 
-              className="group text-lg px-12 animate-pulse-glow"
-            >
-              Start Building Your Breakthrough
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+          <Button 
+            variant="accent" 
+            size="xl" 
+            className="group text-lg px-12 animate-pulse-glow"
+            onClick={onOpenQualify}
+          >
+            Start Building Your Breakthrough
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </Button>
 
           <p className="mt-6 text-sm text-primary-foreground/70">
             We respond to every inquiry within 24 hours
