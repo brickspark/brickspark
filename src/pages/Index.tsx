@@ -21,13 +21,27 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Brick Spark | Transform Team Collaboration with LEGO® Workshops</title>
+        <title>LEGO Serious Play Workshops Melbourne | Team Building & Leadership | Brick Spark</title>
         <meta 
           name="description" 
-          content="Transform your small team's collaboration with hands-on LEGO® Serious Play® workshops. Get actionable results, 100% participation, and lasting cultural change." 
+          content="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning. 100% participation guaranteed." 
         />
-        <meta name="keywords" content="LEGO Serious Play, team building, workshop, collaboration, small business, team engagement" />
-        <link rel="canonical" href="https://brickspark.com" />
+        <meta name="keywords" content="LEGO Serious Play Melbourne, team building workshops Melbourne, corporate team building Victoria, leadership development workshops, strategic planning facilitation, LEGO workshops Australia, team collaboration training, innovation workshops Melbourne, creative problem solving, executive team building" />
+        <link rel="canonical" href="https://brickspark.com.au" />
+        
+        {/* Additional SEO meta tags */}
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="author" content="Brick Spark" />
+        <meta name="geo.region" content="AU-VIC" />
+        <meta name="geo.placename" content="Melbourne" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="LEGO Serious Play Workshops Melbourne | Team Building & Leadership" />
+        <meta property="og:description" content="Transform your team with hands-on LEGO® Serious Play® workshops. Expert facilitation for team building, leadership development & strategic planning in Melbourne." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://brickspark.com.au" />
+        <meta property="og:locale" content="en_AU" />
+        <meta property="og:site_name" content="Brick Spark" />
       </Helmet>
 
       <Header />
