@@ -76,9 +76,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-background/70">
-              <li>hello@brickspark.com</li>
-              <li>+44 (0) 123 456 7890</li>
-              <li>London, UK</li>
+              <li>hello@brickspark.com.au</li>
+              <li>+61 (0) 3 XXXX XXXX</li>
+              <li>Melbourne, VIC, Australia</li>
             </ul>
           </div>
         </div>
