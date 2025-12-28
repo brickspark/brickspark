@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, User, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { supabase } from "@/integrations/supabase/client";
 
 interface FormData {
   desiredOutcomes: string;
@@ -97,13 +98,48 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Application Submitted!",
-      description: "We'll be in touch within 24 hours.",
-    });
+    
+    try {
+      // Combine form data into structured fields for database
+      const goals = [
+        formData.desiredOutcomes && `Desired Outcomes: ${formData.desiredOutcomes}`,
+        formData.specificChallenge && `Specific Challenge: ${formData.specificChallenge}`,
+      ].filter(Boolean).join('\n\n');
+
+      const pastExperience = [
+        formData.previousSolutions && `Previous Solutions: ${formData.previousSolutions}`,
+        formData.whyNotWorked && `Why They Didn't Work: ${formData.whyNotWorked}`,
+      ].filter(Boolean).join('\n\n');
+
+      const { error } = await supabase.from('workshop_enquiries').insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        company: formData.company.trim() || null,
+        phone: formData.phone.trim() || null,
+        goals: goals || null,
+        past_experience: pastExperience || null,
+        team_size: formData.teamSize || null,
+        timeline: formData.timeline || null,
+        budget: formData.budgetRange || null,
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Application Submitted!",
+        description: "We'll be in touch within 24 hours.",
+      });
+    } catch (error) {
+      console.error('Error submitting enquiry:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
