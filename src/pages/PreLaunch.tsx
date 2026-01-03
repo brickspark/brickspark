@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { LegoBrick } from "@/components/LegoBrick";
-import { Sparkles, Users, Zap, Target, Lightbulb, CheckCircle } from "lucide-react";
+import { Header } from "@/components/layout/Header";
+import { Sparkles, Users, Zap, Target, Lightbulb } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 import heroImage from "@/assets/hero-workshop.jpg";
-import brickSparkLogo from "@/assets/brick-spark-logo.svg";
 
 const keyPoints = [
   {
@@ -29,42 +25,6 @@ const keyPoints = [
 ];
 
 const PreLaunch = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email || !name) {
-      toast.error("Please enter your name and email");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from("workshop_enquiries")
-        .insert({
-          name,
-          email,
-          goals: "Pre-launch interest signup",
-        });
-
-      if (error) throw error;
-
-      setIsSubmitted(true);
-      toast.success("You're on the list! We'll notify you when we launch.");
-    } catch (error) {
-      console.error("Error submitting:", error);
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <>
       <Helmet>
@@ -76,7 +36,9 @@ const PreLaunch = () => {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <Header />
+      
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Hero Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -101,15 +63,6 @@ const PreLaunch = () => {
 
         <div className="container relative z-10 px-4 py-20">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Logo */}
-            <div className="flex justify-center mb-8 animate-slide-up">
-              <img 
-                src={brickSparkLogo} 
-                alt="Brick Spark Logo" 
-                className="h-16 md:h-20 w-auto"
-              />
-            </div>
-
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-background/10 backdrop-blur-sm px-4 py-2 rounded-full border border-background/20 mb-8 animate-slide-up animation-delay-100">
               <Sparkles className="w-4 h-4 text-accent" />
@@ -151,51 +104,18 @@ const PreLaunch = () => {
               ))}
             </div>
 
-            {/* Email Signup Form */}
-            {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto animate-slide-up animation-delay-500">
-                <div className="flex flex-col gap-3">
-                  <Input
-                    type="text"
-                    placeholder="Your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="bg-background/95 border-background/30 text-foreground placeholder:text-muted-foreground h-12"
-                    required
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-background/95 border-background/30 text-foreground placeholder:text-muted-foreground h-12"
-                    required
-                  />
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="xl" 
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Submitting..." : "Let Me Know When Brick Spark Is Live"}
-                  </Button>
-                </div>
-                <p className="text-background/50 text-xs mt-4">
-                  We'll only email you when we launch. No spam, ever.
-                </p>
-              </form>
-            ) : (
-              <div className="max-w-md mx-auto animate-scale-in bg-background/10 backdrop-blur-sm rounded-xl p-8 border border-background/20">
-                <CheckCircle className="w-12 h-12 text-accent mx-auto mb-4" />
-                <h3 className="font-display font-bold text-xl text-background mb-2">
-                  You're on the list!
-                </h3>
-                <p className="text-background/80">
-                  We'll notify you as soon as Brick Spark is live.
-                </p>
-              </div>
-            )}
+            {/* CTA Button */}
+            <div className="animate-slide-up animation-delay-500">
+              <a 
+                href="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" size="xl">
+                  Let Me Know When Brick Spark Is Live
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
 
