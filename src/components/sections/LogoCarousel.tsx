@@ -1,12 +1,17 @@
+import australianUnityLogo from "@/assets/logos/australian-unity.webp";
+import boralLogo from "@/assets/logos/boral.png";
+import channel9Logo from "@/assets/logos/channel-9.png";
+import sensisLogo from "@/assets/logos/sensis.png";
+import worksafeLogo from "@/assets/logos/worksafe.png";
+import yellowPagesLogo from "@/assets/logos/yellow-pages.jpeg";
+
 const logos = [
-  { name: "StartupXYZ", style: "font-bold" },
-  { name: "TechCorp", style: "font-semibold tracking-tight" },
-  { name: "InnovateCo", style: "font-bold italic" },
-  { name: "FutureWorks", style: "font-semibold" },
-  { name: "GrowthLabs", style: "font-bold tracking-wide" },
-  { name: "ScaleUp Inc", style: "font-semibold" },
-  { name: "Agile Teams", style: "font-bold" },
-  { name: "NextLevel", style: "font-semibold tracking-tight" },
+  { name: "Australian Unity", src: australianUnityLogo },
+  { name: "Boral", src: boralLogo },
+  { name: "Channel 9", src: channel9Logo },
+  { name: "Sensis", src: sensisLogo },
+  { name: "WorkSafe Victoria", src: worksafeLogo },
+  { name: "Yellow Pages", src: yellowPagesLogo },
 ];
 
 export const LogoCarousel = () => {
@@ -28,23 +33,23 @@ export const LogoCarousel = () => {
           {/* First set */}
           <div className="flex shrink-0 gap-16 items-center px-8">
             {logos.map((logo, index) => (
-              <div 
+              <img 
                 key={`first-${index}`}
-                className={`font-display text-2xl text-muted-foreground/50 hover:text-foreground transition-colors whitespace-nowrap ${logo.style}`}
-              >
-                {logo.name}
-              </div>
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 md:h-14 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
             ))}
           </div>
           {/* Duplicate set for seamless loop */}
           <div className="flex shrink-0 gap-16 items-center px-8">
             {logos.map((logo, index) => (
-              <div 
+              <img 
                 key={`second-${index}`}
-                className={`font-display text-2xl text-muted-foreground/50 hover:text-foreground transition-colors whitespace-nowrap ${logo.style}`}
-              >
-                {logo.name}
-              </div>
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 md:h-14 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
             ))}
           </div>
         </div>
