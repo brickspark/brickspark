@@ -31,24 +31,24 @@ export const LogoCarousel = () => {
         {/* Scrolling container */}
         <div className="flex animate-scroll">
           {/* First set */}
-          <div className="flex shrink-0 gap-16 items-center px-8">
+          <div className="flex shrink-0 gap-20 items-center px-10">
             {logos.map((logo, index) => (
               <img 
                 key={`first-${index}`}
                 src={logo.src}
                 alt={logo.name}
-                className="h-12 md:h-14 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-14 md:h-16 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             ))}
           </div>
           {/* Duplicate set for seamless loop */}
-          <div className="flex shrink-0 gap-16 items-center px-8">
+          <div className="flex shrink-0 gap-20 items-center px-10">
             {logos.map((logo, index) => (
               <img 
                 key={`second-${index}`}
                 src={logo.src}
                 alt={logo.name}
-                className="h-12 md:h-14 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-14 md:h-16 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             ))}
           </div>

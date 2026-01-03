@@ -81,11 +81,11 @@ export const HeroSection = ({ onOpenQualify }: HeroSectionProps) => {
             <p className="text-sm text-background/60 mb-4">
               Trusted by innovative teams at
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <img src={australianUnityLogo} alt="Australian Unity" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={boralLogo} alt="Boral" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={channel9Logo} alt="Channel 9" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={sensisLogo} alt="Sensis" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              <img src={australianUnityLogo} alt="Australian Unity" className="h-10 md:h-12 w-auto brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={boralLogo} alt="Boral" className="h-10 md:h-12 w-auto brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={channel9Logo} alt="Channel 9" className="h-10 md:h-12 w-auto brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={sensisLogo} alt="Sensis" className="h-10 md:h-12 w-auto brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>
