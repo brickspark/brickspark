@@ -2,10 +2,6 @@ import { Button } from "@/components/ui/button";
 import { LegoBrick } from "@/components/LegoBrick";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-workshop.jpg";
-import australianUnityLogo from "@/assets/logos/australian-unity.webp";
-import boralLogo from "@/assets/logos/boral.png";
-import channel9Logo from "@/assets/logos/channel-9.png";
-import sensisLogo from "@/assets/logos/sensis.png";
 
 interface HeroSectionProps {
   onOpenQualify: () => void;
@@ -81,11 +77,11 @@ export const HeroSection = ({ onOpenQualify }: HeroSectionProps) => {
             <p className="text-sm text-background/60 mb-4">
               Trusted by innovative teams at
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <img src={australianUnityLogo} alt="Australian Unity" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={boralLogo} alt="Boral" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={channel9Logo} alt="Channel 9" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={sensisLogo} alt="Sensis" className="h-8 md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+            <div className="flex flex-wrap justify-center gap-8 text-background/50">
+              <span className="font-display font-semibold text-lg">StartupXYZ</span>
+              <span className="font-display font-semibold text-lg">TechCorp</span>
+              <span className="font-display font-semibold text-lg">InnovateCo</span>
+              <span className="font-display font-semibold text-lg">FutureWorks</span>
             </div>
           </div>
         </div>
