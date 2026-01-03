@@ -9,87 +9,79 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ onOpenQualify }: HeroSectionProps) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/85 via-secondary/75 to-secondary/90" />
+      </div>
+
       {/* Decorative Lego Bricks */}
-      <div className="absolute top-20 left-10 animate-float opacity-20">
+      <div className="absolute top-20 left-10 animate-float opacity-40">
         <LegoBrick color="red" size="lg" studs={4} />
       </div>
-      <div className="absolute bottom-32 left-20 animate-float animation-delay-400 opacity-20">
+      <div className="absolute top-40 right-20 animate-brick-bounce animation-delay-200 opacity-40">
+        <LegoBrick color="blue" size="md" studs={2} />
+      </div>
+      <div className="absolute bottom-32 left-20 animate-float animation-delay-400 opacity-40">
         <LegoBrick color="yellow" size="lg" studs={4} />
+      </div>
+      <div className="absolute bottom-40 right-32 animate-brick-bounce animation-delay-300 opacity-40">
+        <LegoBrick color="green" size="md" studs={2} />
       </div>
 
       <div className="container relative z-10 px-4 py-20 md:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content - Left Side */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-background/10 backdrop-blur-sm px-4 py-2 rounded-full border border-background/20 mb-8 animate-slide-up">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-background/90">
-                LEGO® Serious Play® Certified Facilitators
-              </span>
-            </div>
-
-            {/* Headline */}
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-6 animate-slide-up animation-delay-100 leading-tight">
-              Your Team Is{" "}
-              <span className="text-accent">Stuck</span>.
-              <br />
-              Let's Build the Solution—
-              <span className="text-accent">Literally</span>.
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-lg md:text-xl text-background/85 max-w-2xl mx-auto lg:mx-0 mb-10 animate-slide-up animation-delay-200 leading-relaxed">
-              Transform your small team's collaboration with hands-on LEGO® workshops 
-              that turn abstract ideas into <strong className="text-background">actionable plans you can implement the same day</strong>. 
-              Perfect for teams of 5-20 who are tired of workshops that go nowhere.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-slide-up animation-delay-300">
-              <Button variant="hero" size="xl" className="group" onClick={onOpenQualify}>
-                Build Your Breakthrough
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <a href="#how-it-works">
-                <Button variant="outline" size="lg" className="border-background/30 text-background hover:bg-background/10 hover:text-background">
-                  See How It Works
-                </Button>
-              </a>
-            </div>
-
-            {/* Trust indicators */}
-            <div className="mt-12 pt-8 border-t border-background/20 animate-slide-up animation-delay-400">
-              <p className="text-sm text-background/60 mb-4">
-                Trusted by innovative teams at
-              </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-background/50">
-                <span className="font-display font-semibold text-lg">StartupXYZ</span>
-                <span className="font-display font-semibold text-lg">TechCorp</span>
-                <span className="font-display font-semibold text-lg">InnovateCo</span>
-                <span className="font-display font-semibold text-lg">FutureWorks</span>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-background/10 backdrop-blur-sm px-4 py-2 rounded-full border border-background/20 mb-8 animate-slide-up">
+            <Sparkles className="w-4 h-4 text-accent" />
+            <span className="text-sm font-medium text-background/90">
+              LEGO® Serious Play® Certified Facilitators
+            </span>
           </div>
 
-          {/* Image - Right Side */}
-          <div className="relative animate-slide-up animation-delay-200 hidden lg:block">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={heroImage} 
-                alt="Teams collaborating with LEGO bricks in a workshop" 
-                className="w-full h-auto object-cover"
-              />
-              {/* Subtle overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
-            </div>
-            {/* Decorative elements around image */}
-            <div className="absolute -top-4 -right-4 animate-brick-bounce animation-delay-200 opacity-60">
-              <LegoBrick color="blue" size="md" studs={2} />
-            </div>
-            <div className="absolute -bottom-4 -left-4 animate-brick-bounce animation-delay-300 opacity-60">
-              <LegoBrick color="green" size="md" studs={2} />
+          {/* Headline */}
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-6 animate-slide-up animation-delay-100 leading-tight">
+            Your Team Is{" "}
+            <span className="text-accent">Stuck</span>.
+            <br />
+            Let's Build the Solution—
+            <span className="text-accent">Literally</span>.
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-background/85 max-w-2xl mx-auto mb-10 animate-slide-up animation-delay-200 leading-relaxed">
+            Transform your small team's collaboration with hands-on LEGO® workshops 
+            that turn abstract ideas into <strong className="text-background">actionable plans you can implement the same day</strong>. 
+            Perfect for teams of 5-20 who are tired of workshops that go nowhere.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-300">
+            <Button variant="hero" size="xl" className="group" onClick={onOpenQualify}>
+              Build Your Breakthrough
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <a href="#how-it-works">
+              <Button variant="outline" size="lg" className="border-background/30 text-background hover:bg-background/10 hover:text-background">
+                See How It Works
+              </Button>
+            </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-12 pt-8 border-t border-background/20 animate-slide-up animation-delay-400">
+            <p className="text-sm text-background/60 mb-4">
+              Trusted by innovative teams at
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 text-background/50">
+              <span className="font-display font-semibold text-lg">StartupXYZ</span>
+              <span className="font-display font-semibold text-lg">TechCorp</span>
+              <span className="font-display font-semibold text-lg">InnovateCo</span>
+              <span className="font-display font-semibold text-lg">FutureWorks</span>
             </div>
           </div>
         </div>
