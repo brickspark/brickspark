@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LegoBrick } from "@/components/LegoBrick";
 import { Header } from "@/components/layout/Header";
@@ -25,6 +26,18 @@ const keyPoints = [
 ];
 
 const PreLaunch = () => {
+  useEffect(() => {
+    // Load the funnels.so form embed script
+    const script = document.createElement("script");
+    script.src = "https://link.funnels.so/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -106,16 +119,38 @@ const PreLaunch = () => {
 
             {/* CTA Button */}
             <div className="animate-slide-up animation-delay-500">
-              <a 
-                href="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button 
+                variant="hero" 
+                size="xl"
+                onClick={() => {
+                  const iframe = document.getElementById("popup-I7fThpLfkWrmPkg3y9AX") as HTMLIFrameElement;
+                  if (iframe) {
+                    iframe.style.display = "block";
+                  }
+                }}
               >
-                <Button variant="hero" size="xl">
-                  Let Me Know When Brick Spark Is Live
-                </Button>
-              </a>
+                Let Me Know When Brick Spark Is Live
+              </Button>
             </div>
+
+            {/* Funnels.so Popup Form */}
+            <iframe
+              src="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
+              style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+              id="popup-I7fThpLfkWrmPkg3y9AX"
+              data-layout='{"id":"POPUP"}'
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="PRE-LAUNCH"
+              data-height="410"
+              data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
+              data-form-id="I7fThpLfkWrmPkg3y9AX"
+              title="PRE-LAUNCH"
+            />
           </div>
         </div>
 
