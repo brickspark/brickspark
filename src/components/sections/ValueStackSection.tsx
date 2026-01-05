@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const valueItems = [
   {
-    title: "2, 3, or Half-Day Workshop",
+    title: "High-impact Workshops — From Two Hours To Half a Day",
     description: "Tailored to your team's schedule and goals",
     value: "£2,500+"
   },
