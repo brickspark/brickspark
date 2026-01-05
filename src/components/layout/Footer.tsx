@@ -19,7 +19,7 @@ export const Footer = () => {
               that deliver immediate, actionable results.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email">
+              <a href="mailto:contactbrickspark@gmail.com" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email">
                 <Mail className="w-5 h-5" />
               </a>
               <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="LinkedIn">
