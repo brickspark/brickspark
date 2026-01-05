@@ -2,33 +2,43 @@ import { Check, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-const valueItems = [{
-  title: "2, 3, or Half-Day Workshop",
-  description: "Tailored to your team's schedule and goals",
-  value: "£2,500+"
-}, {
-  title: "Custom Challenge Design",
-  description: "Pre-workshop discovery to design exercises around YOUR specific challenges",
-  value: "£500"
-}, {
-  title: "Premium LEGO® Materials",
-  description: "All materials provided—nothing to buy or prepare",
-  value: "Included"
-}, {
-  title: "Professional Facilitation",
-  description: "Certified LEGO® Serious Play® facilitator guides every step",
-  value: "Certified Expert"
-}, {
-  title: "Action Item Documentation",
-  description: "Walk away with a written summary of all tasks, owners, and deadlines",
-  value: "£300"
-}, {
-  title: "30-Day Follow-Up Call",
-  description: "Check-in session to ensure implementation and address obstacles",
-  value: "£200"
-}];
+
+const valueItems = [
+  {
+    title: "2, 3, or Half-Day Workshop",
+    description: "Tailored to your team's schedule and goals",
+    value: "£2,500+"
+  },
+  {
+    title: "Custom Challenge Design",
+    description: "Pre-workshop discovery to design exercises around YOUR specific challenges",
+    value: "£500"
+  },
+  {
+    title: "Premium LEGO® Materials",
+    description: "All materials provided—nothing to buy or prepare",
+    value: "Included"
+  },
+  {
+    title: "Professional Facilitation",
+    description: "Certified LEGO® Serious Play® facilitator guides every step",
+    value: "Certified Expert"
+  },
+  {
+    title: "Action Item Documentation",
+    description: "Walk away with a written summary of all tasks, owners, and deadlines",
+    value: "£300"
+  },
+  {
+    title: "30-Day Follow-Up Call",
+    description: "Check-in session to ensure implementation and address obstacles",
+    value: "£200"
+  }
+];
+
 export const ValueStackSection = () => {
-  return <section className="py-20 md:py-28 bg-secondary text-secondary-foreground">
+  return (
+    <section className="py-20 md:py-28 bg-secondary text-secondary-foreground">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -47,7 +57,25 @@ export const ValueStackSection = () => {
           </div>
 
           <div className="space-y-4 mb-12">
-            {valueItems.map((item, index) => {})}
+            {valueItems.map((item, index) => (
+              <div 
+                key={index}
+                className="flex items-center justify-between p-4 rounded-xl bg-secondary-foreground/5 border border-secondary-foreground/10 hover:border-accent/30 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-2 rounded-lg bg-accent/20">
+                    <Check className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary-foreground">{item.title}</h4>
+                    <p className="text-sm text-secondary-foreground/70">{item.description}</p>
+                  </div>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="font-display font-bold text-accent">{item.value}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center p-8 rounded-2xl bg-gradient-accent shadow-strong">
@@ -70,5 +98,6 @@ export const ValueStackSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
