@@ -36,7 +36,7 @@ const valueItems = [
   },
   {
     title: "Social Media Promotion",
-    description: "Check-in session to ensure implementation and address obstacles",
+    description: "Your workshop experience promoted throughout Brick Spark social media network",
     value: "Included"
   }
 ];
