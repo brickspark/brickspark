@@ -22,7 +22,7 @@ const valueItems = [
   {
     title: "Professional Facilitation",
     description: "Certified LEGO® Serious Play® facilitator guides every step",
-    value: "Included"
+    value: "Certified Facilitator"
   },
   {
     title: "Action Item Documentation",
