@@ -10,6 +10,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { LogoCarousel } from "@/components/sections/LogoCarousel";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ValueStackSection } from "@/components/sections/ValueStackSection";
+import { FacilitatorSection } from "@/components/sections/FacilitatorSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { QualifyModal } from "@/components/QualifyModal";
@@ -60,6 +61,7 @@ const Index = () => {
           <TestimonialsSection />
         </section>
         <ValueStackSection />
+        <FacilitatorSection />
         <section id="faq">
           <FAQSection />
         </section>

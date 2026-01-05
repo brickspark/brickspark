@@ -1,0 +1,81 @@
+import { Award, MapPin, Users } from "lucide-react";
+
+export const FacilitatorSection = () => {
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <Users className="w-4 h-4" />
+              Meet Your Facilitator
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Guided by <span className="text-primary">Experience</span>, Driven by <span className="text-primary">Connection</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
+            {/* Photo Placeholder */}
+            <div className="md:col-span-2 flex justify-center">
+              <div className="relative">
+                <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl bg-muted border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
+                  {/* [PHOTO PLACEMENT: Professional headshot - centered, portrait orientation] */}
+                  <div className="text-center p-6">
+                    <div className="w-20 h-20 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
+                      <Users className="w-10 h-10 text-primary/60" />
+                    </div>
+                    <p className="text-sm text-muted-foreground">Professional Photo</p>
+                  </div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-accent/20 rounded-xl -z-10" />
+                <div className="absolute -top-3 -left-3 w-16 h-16 bg-primary/10 rounded-lg -z-10" />
+              </div>
+            </div>
+
+            {/* Bio Content */}
+            <div className="md:col-span-3 space-y-6">
+              <div>
+                <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  CJ Pepper
+                </h3>
+                <p className="text-primary font-medium">
+                  Certified LEGO® Serious Play® Facilitator
+                </p>
+              </div>
+
+              <div className="prose prose-lg text-muted-foreground">
+                <p>
+                  With over 21 years of experience in Learning and Development, CJ brings a rare combination of deep expertise and genuine warmth to every workshop. Having facilitated programs for teams across Australia, CJ understands that the best insights emerge when people feel comfortable enough to play, explore, and truly connect.
+                </p>
+                <p>
+                  As a Certified LEGO® Serious Play® Facilitator, CJ creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. This isn't about corporate jargon or textbook theories; it's about unlocking the creative potential that exists within every team member.
+                </p>
+                <p>
+                  CJ's approach is refreshingly human: attentive, encouraging, and focused on helping your team discover solutions they already have within them. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
+                </p>
+              </div>
+
+              {/* Credentials */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
+                  <Award className="w-4 h-4" />
+                  21+ Years L&D Experience
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
+                  <MapPin className="w-4 h-4" />
+                  Australia-Wide
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                  <Award className="w-4 h-4" />
+                  LSP Certified
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
