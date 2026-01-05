@@ -1,9 +1,7 @@
 import { Sparkles, Mail, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-foreground text-background py-16">
+  return <footer className="bg-foreground text-background py-16">
       <div className="container px-4">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
@@ -21,25 +19,13 @@ export const Footer = () => {
               that deliver immediate, actionable results.
             </p>
             <div className="flex gap-4">
-              <a 
-                href="#" 
-                className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors"
-                aria-label="Email"
-              >
+              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email">
                 <Mail className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors"
-                aria-label="Twitter"
-              >
+              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -76,8 +62,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-background/70">
-              <li>hello@brickspark.com.au</li>
-              <li>+61 (0) 3 XXXX XXXX</li>
+              <li>contactbrickspark@gmail.com</li>
+              <li>+61 0437 172 064</li>
               <li>Melbourne, VIC, Australia</li>
             </ul>
           </div>
@@ -98,6 +84,5 @@ export const Footer = () => {
           LEGO® and LEGO® Serious Play® are trademarks of the LEGO Group, which does not sponsor, authorize, or endorse this website.
         </p>
       </div>
-    </footer>
-  );
+    </footer>;
 };
