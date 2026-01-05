@@ -57,11 +57,11 @@ const Index = () => {
         </section>
         <HowItWorksSection />
         <LogoCarousel />
+        <FacilitatorSection />
         <section id="testimonials">
           <TestimonialsSection />
         </section>
         <ValueStackSection />
-        <FacilitatorSection />
         <section id="faq">
           <FAQSection />
         </section>
