@@ -7,12 +7,12 @@ const valueItems = [
   {
     title: "High-impact Workshops — From Two Hours To Half a Day",
     description: "Tailored to your team's schedule and goals",
-    value: "£2,500+"
+    value: "Included"
   },
   {
     title: "Custom Challenge Design",
     description: "Pre-workshop discovery to design exercises around YOUR specific challenges",
-    value: "£500"
+    value: "Included"
   },
   {
     title: "Premium LEGO® Materials",
@@ -22,17 +22,17 @@ const valueItems = [
   {
     title: "Professional Facilitation",
     description: "Certified LEGO® Serious Play® facilitator guides every step",
-    value: "Certified Expert"
+    value: "Included"
   },
   {
     title: "Action Item Documentation",
     description: "Walk away with a written summary of all tasks, owners, and deadlines",
-    value: "£300"
+    value: "Included"
   },
   {
     title: "30-Day Follow-Up Call",
     description: "Check-in session to ensure implementation and address obstacles",
-    value: "£200"
+    value: "Included"
   }
 ];
 
@@ -79,13 +79,9 @@ export const ValueStackSection = () => {
           </div>
 
           <div className="text-center p-8 rounded-2xl bg-gradient-accent shadow-strong">
-            <p className="text-accent-foreground/80 mb-2">Total Value</p>
-            <div className="font-display text-4xl font-bold text-accent-foreground mb-2">
-              £3,500+
+            <div className="font-display text-4xl font-bold text-accent-foreground mb-6">
+              Everything You Need — Included
             </div>
-            <p className="text-accent-foreground/80 mb-6">
-              Starting from a fraction of that investment
-            </p>
             <Link to="/qualify">
               <Button variant="secondary" size="xl" className="group shadow-medium">
                 Get Custom Pricing
