@@ -35,7 +35,7 @@ const valueItems = [
     value: "Included"
   },
   {
-    title: "30-Day Follow-Up Call",
+    title: "Social Media Promotion",
     description: "Check-in session to ensure implementation and address obstacles",
     value: "Included"
   }
