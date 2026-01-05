@@ -33,6 +33,11 @@ const valueItems = [
     title: "30-Day Follow-Up Call",
     description: "Check-in session to ensure implementation and address obstacles",
     value: "Included"
+  },
+  {
+    title: "30-Day Follow-Up Call",
+    description: "Check-in session to ensure implementation and address obstacles",
+    value: "Included"
   }
 ];
 
