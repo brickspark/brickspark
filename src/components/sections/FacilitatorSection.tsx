@@ -45,15 +45,21 @@ export const FacilitatorSection = () => {
                 </p>
               </div>
 
-              <div className="prose prose-lg text-muted-foreground">
+              <div className="space-y-4 text-muted-foreground">
                 <p>
-                  With over 22 years of experience in Learning and Development, Chris brings a dynamic blend of facilitation expertise, coaching mastery, and instructional design excellence to every workshop. His passion lies in empowering individuals through engaging, empathetic, and transparent learning experiences that create lasting impact.
+                  Chris is a learning and development specialist with over 22 years' experience helping teams turn thinking into action — not just ideas on a whiteboard.
                 </p>
                 <p>
-                  As a Certified LEGO® Serious Play® Facilitator and Social Styles trainer, Chris creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. From intimate workshops to large-scale sessions with 60+ attendees, Chris adapts his approach to ensure content is impactful and relevant for every audience.
+                  He designs and facilitates workshops that create clarity, alignment, and momentum, using proven methods that engage both the head and the hands. The result? Teams leave with shared understanding, practical insights, and next steps they actually commit to.
                 </p>
                 <p>
-                  Chris has partnered with leading organisations including Nine Publishing Network, WorkSafe Victoria, Australian Unity, Boral, Melba Support Services, and Yellow Pages to design and deliver transformative training programs. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
+                  As a Certified LEGO® Serious Play® Facilitator and Social Styles trainer, Chris creates safe, energising environments where every voice is heard and complex challenges are explored visually, collaboratively, and honestly. Whether working with a small leadership team or facilitating sessions for 60+ participants, every workshop is tailored to your context, goals, and people.
+                </p>
+                <p>
+                  Chris has partnered with organisations including Nine Publishing Network, WorkSafe Victoria, Australian Unity, Boral, Melba Support Services, and Yellow Pages to deliver high-impact learning experiences during periods of change, growth, and transformation.
+                </p>
+                <p className="font-medium text-foreground">
+                  If you're looking for a facilitator who understands how teams really work — and knows how to unlock their collective thinking — you're in the right place.
                 </p>
               </div>
 
