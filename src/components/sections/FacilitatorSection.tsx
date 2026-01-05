@@ -53,7 +53,7 @@ export const FacilitatorSection = () => {
                   As a Certified LEGO® Serious Play® Facilitator and Social Styles trainer, Chris creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. From intimate workshops to large-scale sessions with 60+ attendees, Chris adapts his approach to ensure content is impactful and relevant for every audience.
                 </p>
                 <p>
-                  Chris has partnered with leading organisations including Nine Publishing Network, WorkSafe Victoria, Australian Unity, Boral, and Melba Support Services to design and deliver transformative training programs. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
+                  Chris has partnered with leading organisations including Nine Publishing Network, WorkSafe Victoria, Australian Unity, Boral, Melba Support Services, and Yellow Pages to design and deliver transformative training programs. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
                 </p>
               </div>
 
