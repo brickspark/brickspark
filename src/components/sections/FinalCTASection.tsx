@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Clock, Users } from "lucide-react";
 interface FinalCTASectionProps {
   onOpenQualify: () => void;
 }
@@ -25,12 +25,9 @@ export const FinalCTASection = ({
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             <div className="flex items-center gap-2 text-primary-foreground/80">
               <Clock className="w-5 h-5" />
-              <span>2-minute questionnaire</span>
+              <span>1 minute questionnaire</span>
             </div>
-            <div className="flex items-center gap-2 text-primary-foreground/80">
-              <Sparkles className="w-5 h-5" />
-              <span>Personalized proposal</span>
-            </div>
+            
             <div className="flex items-center gap-2 text-primary-foreground/80">
               <Users className="w-5 h-5" />
               <span>No obligation</span>
