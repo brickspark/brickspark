@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -16,17 +16,6 @@ import { Helmet } from "react-helmet-async";
 const PreLaunch = () => {
   const [qualifyOpen, setQualifyOpen] = useState(false);
 
-  useEffect(() => {
-    // Load the funnels.so form embed script
-    const script = document.createElement("script");
-    script.src = "https://link.funnels.so/js/form_embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <>
@@ -64,25 +53,6 @@ const PreLaunch = () => {
       <Footer />
       
       <QualifyModal open={qualifyOpen} onOpenChange={setQualifyOpen} />
-
-      {/* Funnels.so Popup Form */}
-      <iframe
-        src="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
-        style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
-        id="popup-I7fThpLfkWrmPkg3y9AX"
-        data-layout='{"id":"POPUP"}'
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="PRE-LAUNCH"
-        data-height="410"
-        data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
-        data-form-id="I7fThpLfkWrmPkg3y9AX"
-        title="PRE-LAUNCH"
-      />
     </>
   );
 };
