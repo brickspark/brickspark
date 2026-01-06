@@ -51,7 +51,7 @@ const PreLaunch = () => {
         <HeroSection onOpenQualify={openPopup} />
         <ProblemSection />
         <SolutionSection />
-        <WorkshopTypesSection />
+        <WorkshopTypesSection onOpenQualify={openPopup} />
         <section id="benefits">
           <BenefitsSection />
         </section>
