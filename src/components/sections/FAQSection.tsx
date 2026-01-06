@@ -10,7 +10,7 @@ const faqs = [{
   answer: "Immediately. Unlike traditional workshops where insights fade, you leave with concrete, assigned action items. Teams typically report visible changes in communication and collaboration within the first week. The 30-day follow-up call helps ensure sustained implementation."
 }, {
   question: "What's the time commitment?",
-  answer: "We offer half-day (4 hours) and full-day (6-8 hours) workshops. Most teams choose the full day for maximum depth, but half-day sessions can address focused challenges effectively. We work around your schedule—including weekends if needed."
+  answer: "We design workshops to suit your needs, whether that's a sharp two-hour reset or a more immersive half-day session focused on deeper exploration and alignment. We work around your schedule—including weekends if needed."
 }, {
   question: "What do we need to prepare?",
   answer: "Nothing! We bring all materials and handle all logistics. Your only job is to show up with an open mind. Before the workshop, we'll have a discovery call to understand your challenges—that's your only prep."
