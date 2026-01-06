@@ -4,7 +4,11 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/brick-spark-logo.svg";
 
-export const Header = () => {
+interface HeaderProps {
+  onOpenQualify?: () => void;
+}
+
+export const Header = ({ onOpenQualify }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -34,11 +38,9 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/qualify">
-              <Button variant="default" size="default">
-                Get Started
-              </Button>
-            </Link>
+            <Button variant="default" size="default" onClick={onOpenQualify}>
+              Get Started
+            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -87,11 +89,17 @@ export const Header = () => {
               >
                 FAQ
               </a>
-              <Link to="/qualify" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="default" size="default" className="w-full">
-                  Get Started
-                </Button>
-              </Link>
+              <Button 
+                variant="default" 
+                size="default" 
+                className="w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  onOpenQualify?.();
+                }}
+              >
+                Get Started
+              </Button>
             </nav>
           </div>
         )}

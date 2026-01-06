@@ -45,7 +45,7 @@ const PreLaunch = () => {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <Header />
+      <Header onOpenQualify={openPopup} />
       
       <main>
         <HeroSection onOpenQualify={openPopup} />
