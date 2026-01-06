@@ -19,5 +19,45 @@ const testimonials = [{
   highlight: "Everyone participated—first time ever"
 }];
 export const TestimonialsSection = () => {
-  return;
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container px-4">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            What Teams Are Saying
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Real results from real teams who transformed their collaboration.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-xl border border-border p-8 shadow-soft relative"
+            >
+              <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <div>
+                <p className="font-display font-semibold text-foreground">
+                  {testimonial.author}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {testimonial.role}, {testimonial.company}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
