@@ -125,7 +125,7 @@ const Index = () => {
           </div>
           <iframe
             src="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
-            className="w-full h-[min(90vh,900px)] border-0 rounded-lg bg-background"
+            style={{ display: 'block', width: '100%', height: 'min(90vh, 900px)', border: 'none', borderRadius: '8px' }}
             id="popup-I7fThpLfkWrmPkg3y9AX"
             data-layout='{"id":"POPUP"}'
             data-form-name="PRE-LAUNCH"
