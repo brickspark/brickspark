@@ -1,4 +1,5 @@
 import { Award, MapPin, Users } from "lucide-react";
+import cjPepperPhoto from "@/assets/cj-pepper-photo.jpg";
 
 export const FacilitatorSection = () => {
   return (
@@ -16,17 +17,15 @@ export const FacilitatorSection = () => {
           </div>
 
           <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
-            {/* Photo Placeholder */}
+            {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
-                <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl bg-muted border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
-                  {/* [PHOTO PLACEMENT: Professional headshot - centered, portrait orientation] */}
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-                      <Users className="w-10 h-10 text-primary/60" />
-                    </div>
-                    <p className="text-sm text-muted-foreground">Professional Photo</p>
-                  </div>
+                <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={cjPepperPhoto} 
+                    alt="CJ Pepper - Certified LEGO® Serious Play® Facilitator" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 {/* Decorative elements */}
                 <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-accent/20 rounded-xl -z-10" />
