@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -19,33 +19,18 @@ import { Helmet } from "react-helmet-async";
 const Index = () => {
   const [qualifyOpen, setQualifyOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
-  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [formLoaded, setFormLoaded] = useState(false);
 
   const openPopup = () => {
+    console.log("[popup] open");
+    setFormLoaded(false);
     setPopupOpen(true);
   };
 
   const closePopup = () => {
+    console.log("[popup] close");
     setPopupOpen(false);
   };
-
-  useEffect(() => {
-    // Load the funnels.so embed script once on first open
-    if (!popupOpen || scriptLoaded) return;
-
-    const existing = document.getElementById("funnels-form-embed");
-    if (existing) {
-      setScriptLoaded(true);
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = "funnels-form-embed";
-    script.src = "https://link.funnels.so/js/form_embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-    setScriptLoaded(true);
-  }, [popupOpen, scriptLoaded]);
 
   return (
     <>
@@ -100,7 +85,7 @@ const Index = () => {
       
       <QualifyModal open={qualifyOpen} onOpenChange={setQualifyOpen} />
 
-      {/* Funnels.so Popup Form - always mounted, visibility toggled */}
+      {/* Funnels form Popup */}
       <div
         className={`fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4 transition-opacity ${
           popupOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -123,17 +108,38 @@ const Index = () => {
               Close
             </button>
           </div>
-          <iframe
-            src="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
-            style={{ display: 'block', width: '100%', height: 'min(90vh, 900px)', border: 'none', borderRadius: '8px' }}
-            id="popup-I7fThpLfkWrmPkg3y9AX"
-            data-layout='{"id":"POPUP"}'
-            data-form-name="PRE-LAUNCH"
-            data-height="900"
-            data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
-            data-form-id="I7fThpLfkWrmPkg3y9AX"
-            title="PRE-LAUNCH"
-          />
+
+          <div className="relative rounded-lg overflow-hidden bg-background">
+            {!formLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center text-sm text-muted-foreground">
+                Loading form...
+              </div>
+            )}
+            <iframe
+              key={popupOpen ? "open" : "closed"}
+              src={popupOpen ? "https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX" : "about:blank"}
+              style={{
+                display: "block",
+                width: "100%",
+                height: "min(90vh, 900px)",
+                border: "none",
+                borderRadius: 8,
+              }}
+              allow="clipboard-write"
+              referrerPolicy="no-referrer-when-downgrade"
+              id="popup-I7fThpLfkWrmPkg3y9AX"
+              data-layout='{"id":"POPUP"}'
+              data-form-name="PRE-LAUNCH"
+              data-height="900"
+              data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
+              data-form-id="I7fThpLfkWrmPkg3y9AX"
+              title="PRE-LAUNCH"
+              onLoad={() => {
+                console.log("[popup] iframe loaded");
+                setFormLoaded(true);
+              }}
+            />
+          </div>
         </div>
       </div>
     </>
