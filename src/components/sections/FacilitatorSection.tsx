@@ -20,13 +20,15 @@ export const FacilitatorSection = () => {
             {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
-                {/* Retro single-line border using lego yellow */}
-                <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden shadow-lg" style={{ border: '5px solid hsl(var(--lego-yellow))' }}>
-                  <img 
-                    src={cjPepperPhoto} 
-                    alt="Christopher Pepper - Certified LEGO® Serious Play® Facilitator" 
-                    className="w-full h-full object-cover object-top"
-                  />
+                {/* Retro double border using lego red (outer) and yellow (inner) */}
+                <div className="rounded-2xl overflow-hidden shadow-lg" style={{ border: '5px solid hsl(var(--lego-red))' }}>
+                  <div className="w-64 h-80 md:w-72 md:h-96 overflow-hidden" style={{ border: '5px solid hsl(var(--lego-yellow))' }}>
+                    <img 
+                      src={cjPepperPhoto} 
+                      alt="Christopher Pepper - Certified LEGO® Serious Play® Facilitator" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </div>
                 {/* Decorative elements */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-xl -z-10" />
