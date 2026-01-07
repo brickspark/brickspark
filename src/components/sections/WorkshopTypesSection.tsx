@@ -7,6 +7,10 @@ import {
   MessageCircle 
 } from "lucide-react";
 
+interface WorkshopTypesSectionProps {
+  onOpenPopup?: () => void;
+}
+
 const workshopTypes = [
   {
     icon: Target,
@@ -40,7 +44,7 @@ const workshopTypes = [
   },
 ];
 
-export const WorkshopTypesSection = () => {
+export const WorkshopTypesSection = ({ onOpenPopup }: WorkshopTypesSectionProps) => {
   return (
     <section className="py-20 md:py-28 bg-muted/30">
       <div className="container px-4">
@@ -82,9 +86,12 @@ export const WorkshopTypesSection = () => {
 
         <p className="text-center text-muted-foreground mt-12 max-w-xl mx-auto">
           Don't see your challenge listed? LEGO® Serious Play® is incredibly versatile. 
-          <a href="/qualify" className="text-primary hover:underline ml-1">
+          <button 
+            onClick={onOpenPopup} 
+            className="text-primary hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
+          >
             Let's discuss your specific needs.
-          </a>
+          </button>
         </p>
       </div>
     </section>
