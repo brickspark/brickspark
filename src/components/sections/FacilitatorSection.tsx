@@ -36,9 +36,9 @@ export const FacilitatorSection = () => {
             {/* Bio Content */}
             <div className="md:col-span-3 space-y-6">
               <div>
-                <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-                  CJ Pepper
-                </h3>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Christopher Pepper
+              </h3>
                 <p className="text-primary font-medium">
                   Certified LEGO® Serious Play® Facilitator
                 </p>
