@@ -58,7 +58,7 @@ const Index = () => {
         <meta property="og:site_name" content="Brick Spark" />
       </Helmet>
 
-      <Header />
+      <Header onOpenPopup={openPopup} />
       
       <main>
         <HeroSection onOpenQualify={openPopup} />
