@@ -16,6 +16,13 @@ import { Helmet } from "react-helmet-async";
 const PreLaunch = () => {
   const [qualifyOpen, setQualifyOpen] = useState(false);
 
+  const openPopup = () => {
+    const popup = document.getElementById("popup-I7fThpLfkWrmPkg3y9AX");
+    if (popup) {
+      popup.style.display = "block";
+    }
+  };
+
   useEffect(() => {
     // Load the funnels.so form embed script
     const script = document.createElement("script");
@@ -42,10 +49,10 @@ const PreLaunch = () => {
       <Header />
       
       <main>
-        <HeroSection onOpenQualify={() => setQualifyOpen(true)} />
+        <HeroSection onOpenQualify={openPopup} />
         <ProblemSection />
         <SolutionSection />
-        <WorkshopTypesSection />
+        <WorkshopTypesSection onOpenPopup={openPopup} />
         <section id="benefits">
           <BenefitsSection />
         </section>
@@ -58,7 +65,7 @@ const PreLaunch = () => {
         <section id="faq">
           <FAQSection />
         </section>
-        <FinalCTASection onOpenQualify={() => setQualifyOpen(true)} />
+        <FinalCTASection onOpenQualify={openPopup} />
       </main>
 
       <Footer />
