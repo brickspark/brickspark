@@ -20,15 +20,13 @@ export const FacilitatorSection = () => {
             {/* Photo */}
             <div className="md:col-span-2 flex justify-center">
               <div className="relative">
-                {/* Retro double-line border using lego yellow */}
-                <div className="p-1 rounded-2xl border-4 border-lego-yellow shadow-lg" style={{ boxShadow: '6px 6px 0 hsl(var(--lego-yellow))' }}>
-                  <div className="w-64 h-80 md:w-72 md:h-96 rounded-xl overflow-hidden border-2 border-lego-yellow">
-                    <img 
-                      src={cjPepperPhoto} 
-                      alt="Christopher Pepper - Certified LEGO® Serious Play® Facilitator" 
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
+                {/* Retro single-line border using lego yellow */}
+                <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden shadow-lg" style={{ border: '5px solid hsl(var(--lego-yellow))' }}>
+                  <img 
+                    src={cjPepperPhoto} 
+                    alt="Christopher Pepper - Certified LEGO® Serious Play® Facilitator" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 {/* Decorative elements */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-xl -z-10" />
@@ -49,13 +47,13 @@ export const FacilitatorSection = () => {
 
               <div className="prose prose-lg text-muted-foreground">
                 <p>
-                  With over 21 years of experience in Learning and Development, CJ brings a rare combination of deep expertise and genuine warmth to every workshop. Having facilitated programs for teams across Australia, CJ understands that the best insights emerge when people feel comfortable enough to play, explore, and truly connect.
+                  With over 21 years of experience in Learning and Development, Chris brings a rare combination of deep expertise and genuine warmth to every workshop. Having facilitated programs for teams across Australia, Chris understands that the best insights emerge when people feel comfortable enough to play, explore, and truly connect.
                 </p>
                 <p>
-                  As a Certified LEGO® Serious Play® Facilitator, CJ creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. This isn't about corporate jargon or textbook theories; it's about unlocking the creative potential that exists within every team member.
+                  As a Certified LEGO® Serious Play® Facilitator, Chris creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. This isn't about corporate jargon or textbook theories; it's about unlocking the creative potential that exists within every team member.
                 </p>
                 <p>
-                  CJ's approach is refreshingly human: attentive, encouraging, and focused on helping your team discover solutions they already have within them. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
+                  Chris's approach is refreshingly human: attentive, encouraging, and focused on helping your team discover solutions they already have within them. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
                 </p>
               </div>
 
