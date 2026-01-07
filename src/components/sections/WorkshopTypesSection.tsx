@@ -40,11 +40,7 @@ const workshopTypes = [
   },
 ];
 
-interface WorkshopTypesSectionProps {
-  onOpenQualify?: () => void;
-}
-
-export const WorkshopTypesSection = ({ onOpenQualify }: WorkshopTypesSectionProps) => {
+export const WorkshopTypesSection = () => {
   return (
     <section className="py-20 md:py-28 bg-muted/30">
       <div className="container px-4">
@@ -86,12 +82,9 @@ export const WorkshopTypesSection = ({ onOpenQualify }: WorkshopTypesSectionProp
 
         <p className="text-center text-muted-foreground mt-12 max-w-xl mx-auto">
           Don't see your challenge listed? LEGO® Serious Play® is incredibly versatile. 
-          <button 
-            onClick={onOpenQualify} 
-            className="text-primary hover:underline ml-1 bg-transparent border-none cursor-pointer"
-          >
+          <a href="/qualify" className="text-primary hover:underline ml-1">
             Let's discuss your specific needs.
-          </button>
+          </a>
         </p>
       </div>
     </section>

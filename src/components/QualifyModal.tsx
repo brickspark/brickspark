@@ -9,23 +9,6 @@ import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, U
 import { useToast } from "@/hooks/use-toast";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { supabase } from "@/integrations/supabase/client";
-import { z } from "zod";
-
-const enquirySchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  email: z.string().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
-  company: z.string().max(200, "Company name must be less than 200 characters").optional(),
-  phone: z.string().max(20, "Phone number must be less than 20 characters").optional(),
-  desiredOutcomes: z.string().max(2000, "Response must be less than 2000 characters").optional(),
-  specificChallenge: z.string().max(2000, "Response must be less than 2000 characters").optional(),
-  previousSolutions: z.string().max(2000, "Response must be less than 2000 characters").optional(),
-  whyNotWorked: z.string().max(2000, "Response must be less than 2000 characters").optional(),
-  teamSize: z.string().max(50).optional(),
-  teamRoles: z.string().max(500, "Response must be less than 500 characters").optional(),
-  decisionMaker: z.string().max(100).optional(),
-  timeline: z.string().max(50).optional(),
-  budgetRange: z.string().max(50).optional(),
-});
 
 interface FormData {
   desiredOutcomes: string;
@@ -117,34 +100,6 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
     setIsSubmitting(true);
     
     try {
-      // Validate form data with zod
-      const validationResult = enquirySchema.safeParse({
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        company: formData.company.trim() || undefined,
-        phone: formData.phone.trim() || undefined,
-        desiredOutcomes: formData.desiredOutcomes.trim() || undefined,
-        specificChallenge: formData.specificChallenge.trim() || undefined,
-        previousSolutions: formData.previousSolutions.trim() || undefined,
-        whyNotWorked: formData.whyNotWorked.trim() || undefined,
-        teamSize: formData.teamSize || undefined,
-        teamRoles: formData.teamRoles.trim() || undefined,
-        decisionMaker: formData.decisionMaker || undefined,
-        timeline: formData.timeline || undefined,
-        budgetRange: formData.budgetRange || undefined,
-      });
-
-      if (!validationResult.success) {
-        const firstError = validationResult.error.errors[0];
-        toast({
-          title: "Validation Error",
-          description: firstError.message,
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
-        return;
-      }
-
       // Combine form data into structured fields for database
       const goals = [
         formData.desiredOutcomes && `Desired Outcomes: ${formData.desiredOutcomes}`,
@@ -157,10 +112,10 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
       ].filter(Boolean).join('\n\n');
 
       const { error } = await supabase.from('workshop_enquiries').insert({
-        name: validationResult.data.name,
-        email: validationResult.data.email,
-        company: validationResult.data.company || null,
-        phone: validationResult.data.phone || null,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        company: formData.company.trim() || null,
+        phone: formData.phone.trim() || null,
         goals: goals || null,
         past_experience: pastExperience || null,
         team_size: formData.teamSize || null,
@@ -176,6 +131,7 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
         description: "We'll be in touch within 24 hours.",
       });
     } catch (error) {
+      console.error('Error submitting enquiry:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again or contact us directly.",

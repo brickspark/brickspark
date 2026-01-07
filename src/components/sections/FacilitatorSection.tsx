@@ -1,4 +1,4 @@
-import { Award, Briefcase, GraduationCap, MapPin, Users } from "lucide-react";
+import { Award, MapPin, Users } from "lucide-react";
 
 export const FacilitatorSection = () => {
   return (
@@ -38,36 +38,30 @@ export const FacilitatorSection = () => {
             <div className="md:col-span-3 space-y-6">
               <div>
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-                  Chris Pepper
+                  CJ Pepper
                 </h3>
                 <p className="text-primary font-medium">
-                  Certified LEGO® Serious Play® Facilitator & L&D Specialist
+                  Certified LEGO® Serious Play® Facilitator
                 </p>
               </div>
 
-              <div className="space-y-4 text-muted-foreground">
+              <div className="prose prose-lg text-muted-foreground">
                 <p>
-                  Chris is a learning and development specialist with over 22 years' experience helping teams turn thinking into action — not just ideas on a whiteboard.
+                  With over 21 years of experience in Learning and Development, CJ brings a rare combination of deep expertise and genuine warmth to every workshop. Having facilitated programs for teams across Australia, CJ understands that the best insights emerge when people feel comfortable enough to play, explore, and truly connect.
                 </p>
                 <p>
-                  He designs and facilitates workshops that create clarity, alignment, and momentum, using proven methods that engage both the head and the hands. The result? Teams leave with shared understanding, practical insights, and next steps they actually commit to.
+                  As a Certified LEGO® Serious Play® Facilitator, CJ creates spaces where hands and minds work together—where building with bricks becomes a powerful catalyst for building stronger teams. This isn't about corporate jargon or textbook theories; it's about unlocking the creative potential that exists within every team member.
                 </p>
                 <p>
-                  As a Certified LEGO® Serious Play® Facilitator and Social Styles trainer, Chris creates safe, energising environments where every voice is heard and complex challenges are explored visually, collaboratively, and honestly. Whether working with a small leadership team or facilitating sessions for 60+ participants, every workshop is tailored to your context, goals, and people.
-                </p>
-                <p>
-                  Chris has partnered with organisations including Nine Publishing Network, WorkSafe Victoria, Australian Unity, Boral, Melba Support Services, and Yellow Pages to deliver high-impact learning experiences during periods of change, growth, and transformation.
-                </p>
-                <p className="font-medium text-foreground">
-                  If you're looking for a facilitator who understands how teams really work — and knows how to unlock their collective thinking — you're in the right place.
+                  CJ's approach is refreshingly human: attentive, encouraging, and focused on helping your team discover solutions they already have within them. Whether you're navigating change, strengthening collaboration, or sparking innovation, you'll find a facilitator who genuinely cares about your team's success.
                 </p>
               </div>
 
               {/* Credentials */}
-              <div className="flex flex-wrap gap-3 pt-4">
+              <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
-                  <Briefcase className="w-4 h-4" />
-                  22+ Years L&D Experience
+                  <Award className="w-4 h-4" />
+                  21+ Years L&D Experience
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
                   <MapPin className="w-4 h-4" />
@@ -76,18 +70,6 @@ export const FacilitatorSection = () => {
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                   <Award className="w-4 h-4" />
                   LSP Certified
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  <GraduationCap className="w-4 h-4" />
-                  Cert IV Training & Assessment
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
-                  <Award className="w-4 h-4" />
-                  Tracom Social Styles Certified
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  <GraduationCap className="w-4 h-4" />
-                  Diploma Workplace & Business Coaching
                 </div>
               </div>
             </div>
