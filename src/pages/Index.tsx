@@ -106,7 +106,7 @@ const Index = () => {
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="PRE-LAUNCH"
-        data-height="732"
+        data-height="900"
         data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
         data-form-id="I7fThpLfkWrmPkg3y9AX"
         title="PRE-LAUNCH"
