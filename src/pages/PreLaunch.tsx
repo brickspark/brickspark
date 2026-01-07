@@ -35,12 +35,26 @@ const PreLaunch = () => {
         <title>Brick Spark | LEGO® Serious Play® Workshops - Launching Early 2026</title>
         <meta 
           name="description" 
-          content="Brick Spark is launching early 2026. Be the first to know when our LEGO® Serious Play® workshops for team building and collaboration go live." 
+          content="Brick Spark is launching early 2026. Be the first to know when our LEGO® Serious Play® workshops for team building and collaboration go live in Melbourne." 
         />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://brickspark.com.au/pre-launch" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Brick Spark | LEGO® Serious Play® Workshops - Coming Soon" />
+        <meta property="og:description" content="Be the first to know when our hands-on LEGO® Serious Play® workshops launch in Melbourne. Transform team collaboration and leadership." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://brickspark.com.au/pre-launch" />
+        <meta property="og:locale" content="en_AU" />
+        <meta property="og:site_name" content="Brick Spark" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Brick Spark | LEGO® Serious Play® Workshops - Coming Soon" />
+        <meta name="twitter:description" content="Be the first to know when our hands-on LEGO® Serious Play® workshops launch in Melbourne." />
       </Helmet>
 
-      <Header />
+      <Header onOpenPopup={openPopup} />
       
       <main>
         <HeroSection onOpenQualify={openPopup} />
