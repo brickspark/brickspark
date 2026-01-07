@@ -1,7 +1,10 @@
 import { Check, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
+interface ValueStackSectionProps {
+  onOpenPopup?: () => void;
+}
 
 const valueItems = [
   {
@@ -41,7 +44,7 @@ const valueItems = [
   }
 ];
 
-export const ValueStackSection = () => {
+export const ValueStackSection = ({ onOpenPopup }: ValueStackSectionProps) => {
   return (
     <section className="py-20 md:py-28 bg-secondary text-secondary-foreground">
       <div className="container px-4">
@@ -87,12 +90,10 @@ export const ValueStackSection = () => {
             <div className="font-display text-4xl font-bold text-accent-foreground mb-6">
               Everything You Need — Included
             </div>
-            <Link to="/qualify">
-              <Button variant="secondary" size="xl" className="group shadow-medium">
-                Get Custom Pricing
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <Button variant="secondary" size="xl" className="group shadow-medium" onClick={onOpenPopup}>
+              Get Custom Pricing
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
             <p className="text-sm text-accent-foreground/60 mt-4">
               Complete our quick questionnaire for a personalized quote
             </p>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -18,6 +18,27 @@ import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   const [qualifyOpen, setQualifyOpen] = useState(false);
+
+  const openPopup = () => {
+    const popup = document.getElementById("popup-I7fThpLfkWrmPkg3y9AX") as HTMLIFrameElement;
+    if (popup) {
+      popup.style.display = "block";
+    }
+  };
+
+  useEffect(() => {
+    // Load the funnels.so form embed script
+    const script = document.createElement("script");
+    script.src = "https://link.funnels.so/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -48,10 +69,10 @@ const Index = () => {
       <Header />
       
       <main>
-        <HeroSection onOpenQualify={() => setQualifyOpen(true)} />
+        <HeroSection onOpenQualify={openPopup} />
         <ProblemSection />
         <SolutionSection />
-        <WorkshopTypesSection />
+        <WorkshopTypesSection onOpenPopup={openPopup} />
         <section id="benefits">
           <BenefitsSection />
         </section>
@@ -60,17 +81,36 @@ const Index = () => {
         <section id="testimonials">
           <TestimonialsSection />
         </section>
-        <ValueStackSection />
+        <ValueStackSection onOpenPopup={openPopup} />
         <FacilitatorSection />
         <section id="faq">
           <FAQSection />
         </section>
-        <FinalCTASection onOpenQualify={() => setQualifyOpen(true)} />
+        <FinalCTASection onOpenQualify={openPopup} />
       </main>
 
       <Footer />
       
       <QualifyModal open={qualifyOpen} onOpenChange={setQualifyOpen} />
+
+      {/* Funnels.so Popup Form */}
+      <iframe
+        src="https://link.funnels.so/widget/form/I7fThpLfkWrmPkg3y9AX"
+        style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+        id="popup-I7fThpLfkWrmPkg3y9AX"
+        data-layout='{"id":"POPUP"}'
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="PRE-LAUNCH"
+        data-height="732"
+        data-layout-iframe-id="popup-I7fThpLfkWrmPkg3y9AX"
+        data-form-id="I7fThpLfkWrmPkg3y9AX"
+        title="PRE-LAUNCH"
+      />
     </>
   );
 };
