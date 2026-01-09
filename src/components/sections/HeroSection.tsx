@@ -10,9 +10,12 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroImage})`
-    }}>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: `url(${heroImage})` }}
+        role="img"
+        aria-label="Team collaboration workshop with LEGO bricks in Melbourne"
+      >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/85 via-secondary/75 to-secondary/90" />
       </div>

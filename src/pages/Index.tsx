@@ -41,10 +41,10 @@ const Index = () => {
           content="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning. 100% participation guaranteed." 
         />
         <meta name="keywords" content="LEGO Serious Play Melbourne, team building workshops Melbourne, corporate team building Victoria, leadership development workshops, strategic planning facilitation, LEGO workshops Australia, team collaboration training, innovation workshops Melbourne, creative problem solving, executive team building" />
-        <link rel="canonical" href="https://brickspark.com.au" />
+        <link rel="canonical" href="https://brickspark.com.au/" />
         
         {/* Additional SEO meta tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="author" content="Brick Spark" />
         <meta name="geo.region" content="AU-VIC" />
         <meta name="geo.placename" content="Melbourne" />
@@ -53,9 +53,18 @@ const Index = () => {
         <meta property="og:title" content="LEGO Serious Play Workshops Melbourne | Team Building & Leadership" />
         <meta property="og:description" content="Transform your team with hands-on LEGO® Serious Play® workshops. Expert facilitation for team building, leadership development & strategic planning in Melbourne." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://brickspark.com.au" />
+        <meta property="og:url" content="https://brickspark.com.au/" />
+        <meta property="og:image" content="https://brickspark.com.au/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_AU" />
         <meta property="og:site_name" content="Brick Spark" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="LEGO Serious Play Workshops Melbourne | Brick Spark" />
+        <meta name="twitter:description" content="Transform your team with hands-on LEGO® Serious Play® workshops. Expert facilitation in Melbourne & Victoria." />
+        <meta name="twitter:image" content="https://brickspark.com.au/og-image.jpg" />
       </Helmet>
 
       <Header onOpenPopup={openPopup} />

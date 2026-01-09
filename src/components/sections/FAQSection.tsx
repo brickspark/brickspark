@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import {
   Accordion,
   AccordionContent,
@@ -40,10 +41,30 @@ const faqs = [
   }
 ];
 
+// Generate FAQ Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 export const FAQSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-muted">
-      <div className="container px-4">
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+      <section className="py-20 md:py-28 bg-muted">
+        <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
             Questions? We've Got Answers.
@@ -71,8 +92,9 @@ export const FAQSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
