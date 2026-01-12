@@ -9,6 +9,20 @@ import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, U
 import { useToast } from "@/hooks/use-toast";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+// Validation schema for workshop enquiry form
+const enquirySchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(255, "Name must be less than 255 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().max(255, "Company name must be less than 255 characters").optional().nullable(),
+  phone: z.string().trim().max(50, "Phone number must be less than 50 characters").optional().nullable(),
+  goals: z.string().trim().max(5000, "Goals must be less than 5000 characters").optional().nullable(),
+  past_experience: z.string().trim().max(5000, "Past experience must be less than 5000 characters").optional().nullable(),
+  team_size: z.string().trim().max(50, "Team size must be less than 50 characters").optional().nullable(),
+  timeline: z.string().trim().max(50, "Timeline must be less than 50 characters").optional().nullable(),
+  budget: z.string().trim().max(50, "Budget must be less than 50 characters").optional().nullable(),
+});
 
 interface FormData {
   desiredOutcomes: string;
@@ -111,7 +125,8 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
         formData.whyNotWorked && `Why They Didn't Work: ${formData.whyNotWorked}`,
       ].filter(Boolean).join('\n\n');
 
-      const { error } = await supabase.from('workshop_enquiries').insert({
+      // Validate form data with Zod schema before database insert
+      const rawData = {
         name: formData.name.trim(),
         email: formData.email.trim(),
         company: formData.company.trim() || null,
@@ -121,6 +136,31 @@ export const QualifyModal = ({ open, onOpenChange }: QualifyModalProps) => {
         team_size: formData.teamSize || null,
         timeline: formData.timeline || null,
         budget: formData.budgetRange || null,
+      };
+
+      const validationResult = enquirySchema.safeParse(rawData);
+      
+      if (!validationResult.success) {
+        const firstError = validationResult.error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const { error } = await supabase.from('workshop_enquiries').insert({
+        name: validationResult.data.name,
+        email: validationResult.data.email,
+        company: validationResult.data.company || null,
+        phone: validationResult.data.phone || null,
+        goals: validationResult.data.goals || null,
+        past_experience: validationResult.data.past_experience || null,
+        team_size: validationResult.data.team_size || null,
+        timeline: validationResult.data.timeline || null,
+        budget: validationResult.data.budget || null,
       });
 
       if (error) throw error;
