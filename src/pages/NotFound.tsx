@@ -14,7 +14,7 @@ const NotFound = () => {
       <SEOHead
         title="Page Not Found | Brick Spark"
         description="The page you're looking for doesn't exist. Return to Brick Spark homepage for LEGO® Serious Play® workshops in Melbourne."
-        canonical="https://brickspark.com.au/404"
+        canonical="https://www.brickspark.com.au/404"
         noIndex={true}
       />
       <div className="flex min-h-screen items-center justify-center bg-muted">

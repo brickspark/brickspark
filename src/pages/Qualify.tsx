@@ -121,7 +121,7 @@ const Qualify = () => {
         <SEOHead
           title="Thank You | Brick Spark"
           description="Thank you for your interest in Brick Spark workshops. We'll be in touch soon!"
-          canonical="https://brickspark.com.au/qualify"
+          canonical="https://www.brickspark.com.au/qualify"
           noIndex={true}
         />
         <Header />
@@ -176,7 +176,7 @@ const Qualify = () => {
       <SEOHead
         title="Get Your Custom Workshop Proposal | Brick Spark"
         description="Complete our quick questionnaire to receive a personalized LEGO® Serious Play® workshop proposal for your team."
-        canonical="https://brickspark.com.au/qualify"
+        canonical="https://www.brickspark.com.au/qualify"
       />
       <Header />
       <main className="min-h-screen pt-24 pb-16 bg-gradient-hero">

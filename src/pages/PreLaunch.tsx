@@ -34,8 +34,8 @@ const PreLaunch = () => {
       <SEOHead
         title="Brick Spark | LEGO® Serious Play® Workshops - Launching Early 2026"
         description="Brick Spark is launching early 2026. Be the first to know when our LEGO® Serious Play® workshops for team building and collaboration go live in Melbourne."
-        canonical="https://brickspark.com.au/pre-launch"
-        ogImage="https://brickspark.com.au/og-image.jpg"
+        canonical="https://www.brickspark.com.au/pre-launch"
+        ogImage="https://www.brickspark.com.au/og-image.jpg"
       />
 
       <Header onOpenPopup={openPopup} />
