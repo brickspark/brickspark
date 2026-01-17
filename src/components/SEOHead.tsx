@@ -15,7 +15,7 @@ export const SEOHead = ({
   title,
   description,
   canonical,
-  ogImage = "https://brickspark.com.au/og-image.jpg",
+  ogImage = "https://www.brickspark.com.au/og-image.jpg",
   noIndex = false,
   schemaJson,
   keywords,
