@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Users, Target, Clock, Wallet, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/SEOHead";
 
 interface FormData {
   // Step 1: Desired Outcomes
@@ -118,10 +118,12 @@ const Qualify = () => {
   if (isSubmitted) {
     return (
       <>
-        <Helmet>
-          <title>Thank You | Brick Spark</title>
-          <meta name="description" content="Thank you for your interest in Brick Spark workshops. We'll be in touch soon!" />
-        </Helmet>
+        <SEOHead
+          title="Thank You | Brick Spark"
+          description="Thank you for your interest in Brick Spark workshops. We'll be in touch soon!"
+          canonical="https://brickspark.com.au/qualify"
+          noIndex={true}
+        />
         <Header />
         <main className="min-h-screen pt-24 pb-16 bg-gradient-hero flex items-center">
           <div className="container px-4">
@@ -171,10 +173,11 @@ const Qualify = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Get Your Custom Workshop Proposal | Brick Spark</title>
-        <meta name="description" content="Complete our quick questionnaire to receive a personalized LEGO® Serious Play® workshop proposal for your team." />
-      </Helmet>
+      <SEOHead
+        title="Get Your Custom Workshop Proposal | Brick Spark"
+        description="Complete our quick questionnaire to receive a personalized LEGO® Serious Play® workshop proposal for your team."
+        canonical="https://brickspark.com.au/qualify"
+      />
       <Header />
       <main className="min-h-screen pt-24 pb-16 bg-gradient-hero">
         <div className="container px-4">
