@@ -1,5 +1,5 @@
 # Brick Spark - robots.txt
-# https://brickspark.com.au
+# https://www.brickspark.com.au
 
 User-agent: *
 Allow: /
@@ -25,7 +25,7 @@ User-agent: LinkedInBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://brickspark.com.au/sitemap.xml
+Sitemap: https://www.brickspark.com.au/sitemap.xml
 
 # Crawl-delay for polite crawling (optional)
 Crawl-delay: 1
