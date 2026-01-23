@@ -9,20 +9,30 @@
     <meta name="geo.position" content="-37.8136;144.9631" />
     <meta name="ICBM" content="-37.8136, 144.9631" />
     
-    <!-- Structured Data - Local Business -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "Organization",
+      "@id": "https://www.brickspark.com.au/#organization",
       "name": "Brick Spark",
-      "description": "LEGO® Serious Play® workshop facilitation for team building, leadership development, and strategic planning in Melbourne, Victoria.",
-      "url": "https://brickspark.com.au",
-      "telephone": "+61 0437 172 064",
+      "alternateName": "Brick Spark Australia",
+      "url": "https://www.brickspark.com.au",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.brickspark.com.au/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "image": "https://www.brickspark.com.au/og-image.jpg",
+      "description": "LEGO® Serious Play® workshop facilitation for team building, leadership development, and strategic planning in Melbourne, Victoria, Australia.",
       "email": "hello@brickspark.com.au",
+      "telephone": "+61437172064",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melbourne",
         "addressRegion": "VIC",
+        "postalCode": "3000",
         "addressCountry": "AU"
       },
       "geo": {
@@ -30,54 +40,209 @@
         "latitude": -37.8136,
         "longitude": 144.9631
       },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": -37.8136,
-          "longitude": 144.9631
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Melbourne"
         },
-        "geoRadius": "100000"
-      },
-      "serviceType": ["Team Building Workshops", "Leadership Development", "Strategic Planning", "LEGO Serious Play Facilitation"],
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
+        {
+          "@type": "State",
+          "name": "Victoria"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      ],
       "sameAs": [
-        "https://www.linkedin.com/company/brickspark",
-        "https://twitter.com/brickspark"
+        "https://www.linkedin.com/in/cjpepper",
+        "https://www.linkedin.com/company/brickspark"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.brickspark.com.au/#founder"
+      },
+      "knowsAbout": [
+        "LEGO Serious Play",
+        "Team Building",
+        "Leadership Development",
+        "Strategic Planning",
+        "Corporate Workshops",
+        "Facilitation"
       ]
     }
     </script>
-    
+
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://www.brickspark.com.au/#localbusiness",
+      "name": "Brick Spark",
+      "description": "LEGO® Serious Play® workshop facilitation for team building, leadership development, and strategic planning in Melbourne, Victoria.",
+      "url": "https://www.brickspark.com.au",
+      "telephone": "+61437172064",
+      "email": "hello@brickspark.com.au",
+      "image": "https://www.brickspark.com.au/og-image.jpg",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "postalCode": "3000",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Person (Founder) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.brickspark.com.au/#founder",
+      "name": "Christopher Pepper",
+      "alternateName": "CJ Pepper",
+      "jobTitle": "Founder & Lead Facilitator",
+      "description": "Certified LEGO® Serious Play® facilitator with 20+ years of experience delivering transformative workshops throughout Australia.",
+      "url": "https://www.brickspark.com.au",
+      "sameAs": [
+        "https://www.linkedin.com/in/cjpepper"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://www.brickspark.com.au/#organization"
+      },
+      "knowsAbout": [
+        "LEGO Serious Play Methodology",
+        "Team Building Facilitation",
+        "Leadership Development",
+        "Strategic Planning",
+        "Corporate Training"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.brickspark.com.au/#website",
+      "url": "https://www.brickspark.com.au",
+      "name": "Brick Spark",
+      "description": "LEGO® Serious Play® Workshops for Team Building & Leadership Development in Melbourne",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brickspark.com.au/#organization"
+      },
+      "inLanguage": "en-AU"
+    }
+    </script>
+
     <!-- Structured Data - Service -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "LEGO Serious Play Workshop",
+      "@id": "https://www.brickspark.com.au/#service",
+      "serviceType": "LEGO Serious Play Workshop Facilitation",
+      "name": "LEGO® Serious Play® Workshops",
+      "description": "Hands-on LEGO® Serious Play® workshops designed to transform team collaboration, develop leaders, and drive strategic innovation. 100% participation guaranteed.",
       "provider": {
-        "@type": "ProfessionalService",
-        "name": "Brick Spark"
+        "@type": "LocalBusiness",
+        "@id": "https://www.brickspark.com.au/#localbusiness"
       },
-      "areaServed": {
-        "@type": "State",
-        "name": "Victoria",
-        "containedInPlace": {
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Melbourne"
+        },
+        {
+          "@type": "State",
+          "name": "Victoria"
+        },
+        {
           "@type": "Country",
           "name": "Australia"
         }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Workshop Types",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Team Building Workshop",
+              "description": "Build trust, improve communication, and strengthen team dynamics through hands-on LEGO building exercises."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Leadership Development Workshop",
+              "description": "Develop leadership capabilities and explore leadership styles through the LEGO Serious Play methodology."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strategic Planning Workshop",
+              "description": "Align teams on vision, strategy, and goals using 3D LEGO models to visualize complex concepts."
+            }
+          }
+        ]
       },
-      "description": "Hands-on LEGO® Serious Play® workshops designed to transform team collaboration, develop leaders, and drive strategic innovation.",
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "AUD"
+        "priceCurrency": "AUD",
+        "eligibleRegion": {
+          "@type": "Country",
+          "name": "Australia"
+        }
       }
+    }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.brickspark.com.au"
+        }
+      ]
     }
     </script>
   </head>
