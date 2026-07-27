@@ -27,11 +27,13 @@ export const Header = ({ onOpenPopup }: HeaderProps) => {
             <a href="#benefits" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Benefits
             </a>
-            <a href="#testimonials" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Testimonials
-            </a>
             <a href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               FAQ
+            </a>
+            {/* Plain anchors, not <Link>: these paths are served by the Next.js
+                app through a host rewrite, not by React Router. */}
+            <a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Blog
             </a>
           </nav>
 
@@ -74,19 +76,19 @@ export const Header = ({ onOpenPopup }: HeaderProps) => {
               >
                 Benefits
               </a>
-              <a 
-                href="#testimonials" 
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Testimonials
-              </a>
-              <a 
-                href="#faq" 
+              <a
+                href="#faq"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ
+              </a>
+              <a
+                href="/blog"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
               </a>
               <Button variant="default" size="default" className="w-full" onClick={() => { setIsMenuOpen(false); onOpenPopup?.(); }}>
                 Get Started
