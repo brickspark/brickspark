@@ -19,7 +19,7 @@ export const Footer = () => {
               that deliver immediate, actionable results.
             </p>
             <div className="flex gap-4">
-              <a href="mailto:hello@brickspark.com.au" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email Brick Spark">
+              <a href="mailto:contact@brickspark.com.au" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email Brick Spark">
                 <Mail className="w-5 h-5" />
               </a>
               <a href="https://www.linkedin.com/company/brickspark" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Brick Spark on LinkedIn">
@@ -67,8 +67,8 @@ export const Footer = () => {
             <h4 className="font-display font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-background/70">
               <li>
-                <a href="mailto:hello@brickspark.com.au" className="hover:text-background transition-colors">
-                  hello@brickspark.com.au
+                <a href="mailto:contact@brickspark.com.au" className="hover:text-background transition-colors">
+                  contact@brickspark.com.au
                 </a>
               </li>
               <li>

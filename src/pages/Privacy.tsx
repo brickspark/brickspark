@@ -33,8 +33,8 @@ const Privacy = () => {
                   Brick Spark provides LEGO® Serious Play® workshop facilitation in Melbourne,
                   Victoria. We handle personal information in line with the Australian Privacy
                   Principles under the Privacy Act 1988 (Cth). You can reach us at{" "}
-                  <a href="mailto:hello@brickspark.com.au" className="text-primary underline">
-                    hello@brickspark.com.au
+                  <a href="mailto:contact@brickspark.com.au" className="text-primary underline">
+                    contact@brickspark.com.au
                   </a>
                   .
                 </p>
@@ -123,8 +123,8 @@ const Privacy = () => {
                 <p>
                   You can ask us what personal information we hold about you, ask us to correct
                   it, or ask us to delete it. Email{" "}
-                  <a href="mailto:hello@brickspark.com.au" className="text-primary underline">
-                    hello@brickspark.com.au
+                  <a href="mailto:contact@brickspark.com.au" className="text-primary underline">
+                    contact@brickspark.com.au
                   </a>{" "}
                   and we will respond within a reasonable time. If you are not satisfied with how
                   we have handled your information, you can raise it with the Office of the
