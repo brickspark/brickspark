@@ -7,8 +7,6 @@ import { SolutionSection } from "@/components/sections/SolutionSection";
 import { WorkshopTypesSection } from "@/components/sections/WorkshopTypesSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { LogoCarousel } from "@/components/sections/LogoCarousel";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ValueStackSection } from "@/components/sections/ValueStackSection";
 import { FacilitatorSection } from "@/components/sections/FacilitatorSection";
 import { FAQSection } from "@/components/sections/FAQSection";
@@ -39,7 +37,6 @@ const Index = () => {
         description="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning. 100% participation guaranteed."
         canonical="https://www.brickspark.com.au/"
         ogImage="https://www.brickspark.com.au/og-image.jpg"
-        keywords="LEGO Serious Play Melbourne, team building workshops Melbourne, corporate team building Victoria, leadership development workshops, strategic planning facilitation, LEGO workshops Australia, team collaboration training, innovation workshops Melbourne, creative problem solving, executive team building"
       />
 
       <Header onOpenPopup={openPopup} />
@@ -53,10 +50,6 @@ const Index = () => {
           <BenefitsSection />
         </section>
         <HowItWorksSection />
-        <LogoCarousel />
-        <section id="testimonials">
-          <TestimonialsSection />
-        </section>
         <ValueStackSection onOpenPopup={openPopup} />
         <FacilitatorSection />
         <section id="faq">

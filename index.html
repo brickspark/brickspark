@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="Bl_g92CulDjdgj_iKrl4Wtf5cAvJS_xuZ2K7k8XZrDA" />
-    
-    <!-- Geo Tags for Local SEO (static, not page-specific) -->
-    <meta name="geo.position" content="-37.8136;144.9631" />
-    <meta name="ICBM" content="-37.8136, 144.9631" />
-    
+
+    <!-- Static defaults. react-helmet-async overrides these per route once the
+         app hydrates; they exist so crawlers and social scrapers that do not
+         run JavaScript still get a title, description, canonical and preview. -->
+    <title>LEGO Serious Play Workshops Melbourne | Team Building & Leadership | Brick Spark</title>
+    <meta name="description" content="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.brickspark.com.au/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.brickspark.com.au/" />
+    <meta property="og:title" content="LEGO® Serious Play® Workshops Melbourne | Brick Spark" />
+    <meta property="og:description" content="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning." />
+    <meta property="og:image" content="https://www.brickspark.com.au/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:site_name" content="Brick Spark" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LEGO® Serious Play® Workshops Melbourne | Brick Spark" />
+    <meta name="twitter:description" content="Transform your team with LEGO® Serious Play® workshops in Melbourne. Expert facilitation for team building, leadership development & strategic planning." />
+    <meta name="twitter:image" content="https://www.brickspark.com.au/og-image.jpg" />
+
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
@@ -26,19 +45,13 @@
       },
       "image": "https://www.brickspark.com.au/og-image.jpg",
       "description": "LEGO® Serious Play® workshop facilitation for team building, leadership development, and strategic planning in Melbourne, Victoria, Australia.",
-      "email": "hello@brickspark.com.au",
+      "email": "contact@brickspark.com.au",
       "telephone": "+61437172064",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melbourne",
         "addressRegion": "VIC",
-        "postalCode": "3000",
         "addressCountry": "AU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -37.8136,
-        "longitude": 144.9631
       },
       "areaServed": [
         {
@@ -73,49 +86,6 @@
     }
     </script>
 
-    <!-- Structured Data - Local Business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://www.brickspark.com.au/#localbusiness",
-      "name": "Brick Spark",
-      "description": "LEGO® Serious Play® workshop facilitation for team building, leadership development, and strategic planning in Melbourne, Victoria.",
-      "url": "https://www.brickspark.com.au",
-      "telephone": "+61437172064",
-      "email": "hello@brickspark.com.au",
-      "image": "https://www.brickspark.com.au/og-image.jpg",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Melbourne",
-        "addressRegion": "VIC",
-        "postalCode": "3000",
-        "addressCountry": "AU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -37.8136,
-        "longitude": 144.9631
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-    </script>
-
     <!-- Structured Data - Person (Founder) -->
     <script type="application/ld+json">
     {
@@ -125,7 +95,7 @@
       "name": "Christopher Pepper",
       "alternateName": "CJ Pepper",
       "jobTitle": "Founder & Lead Facilitator",
-      "description": "Certified LEGO® Serious Play® facilitator with 20+ years of experience delivering transformative workshops throughout Australia.",
+      "description": "Certified LEGO® Serious Play® facilitator delivering workshops for teams across Australia.",
       "url": "https://www.brickspark.com.au",
       "sameAs": [
         "https://www.linkedin.com/in/cjpepper"
@@ -169,10 +139,10 @@
       "@id": "https://www.brickspark.com.au/#service",
       "serviceType": "LEGO Serious Play Workshop Facilitation",
       "name": "LEGO® Serious Play® Workshops",
-      "description": "Hands-on LEGO® Serious Play® workshops designed to transform team collaboration, develop leaders, and drive strategic innovation. 100% participation guaranteed.",
+      "description": "Hands-on LEGO® Serious Play® workshops designed to transform team collaboration, develop leaders, and drive strategic innovation.",
       "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://www.brickspark.com.au/#localbusiness"
+        "@type": "Organization",
+        "@id": "https://www.brickspark.com.au/#organization"
       },
       "areaServed": [
         {
@@ -227,22 +197,6 @@
           "name": "Australia"
         }
       }
-    }
-    </script>
-
-    <!-- Structured Data - BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.brickspark.com.au"
-        }
-      ]
     }
     </script>
   </head>

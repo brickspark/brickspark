@@ -5,5 +5,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# The thank-you state of the enquiry form is noindex; keep it out of crawling too.
+Disallow: /qualify
+
+# Sitemap locations
 Sitemap: https://www.brickspark.com.au/sitemap.xml
+Sitemap: https://www.brickspark.com.au/blog/sitemap.xml

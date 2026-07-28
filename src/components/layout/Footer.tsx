@@ -1,4 +1,4 @@
-import { Sparkles, Mail, Linkedin, Twitter } from "lucide-react";
+import { Sparkles, Mail, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 export const Footer = () => {
   return <footer className="bg-foreground text-background py-16">
@@ -19,14 +19,11 @@ export const Footer = () => {
               that deliver immediate, actionable results.
             </p>
             <div className="flex gap-4">
-              <a href="mailto:contactbrickspark@gmail.com" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email">
+              <a href="mailto:contact@brickspark.com.au" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Email Brick Spark">
                 <Mail className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/brickspark" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Brick Spark on LinkedIn">
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -46,13 +43,20 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-background/70 hover:text-background transition-colors">
-                  Testimonials
+                <a href="#faq" className="text-background/70 hover:text-background transition-colors">
+                  FAQ
+                </a>
+              </li>
+              {/* Plain anchors, not <Link>: these paths are served by the Next.js
+                  app through a host rewrite, not by React Router. */}
+              <li>
+                <a href="/blog" className="text-background/70 hover:text-background transition-colors">
+                  Blog
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-background/70 hover:text-background transition-colors">
-                  FAQ
+                <a href="/lego-serious-play-assessment" className="text-background/70 hover:text-background transition-colors">
+                  Free Team Assessment
                 </a>
               </li>
             </ul>
@@ -62,8 +66,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-background/70">
-              <li>contactbrickspark@gmail.com</li>
-              <li>+61 0437 172 064</li>
+              <li>
+                <a href="mailto:contact@brickspark.com.au" className="hover:text-background transition-colors">
+                  contact@brickspark.com.au
+                </a>
+              </li>
+              <li>
+                <a href="tel:+61437172064" className="hover:text-background transition-colors">
+                  +61 437 172 064
+                </a>
+              </li>
               <li>Melbourne, VIC, Australia</li>
             </ul>
           </div>
@@ -75,8 +87,7 @@ export const Footer = () => {
             © {new Date().getFullYear()} Brick Spark. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-background/50">
-            <a href="#" className="hover:text-background transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-background transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-background transition-colors">Privacy Policy</Link>
           </div>
         </div>
 
